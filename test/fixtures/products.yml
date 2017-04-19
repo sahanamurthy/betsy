@@ -1,15 +1,29 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  description: MyString
-  quantity: 1
+  name: aliens
+  description: little green men
+  quantity: 3
   price: 1.5
-  category: MyString
+  category: doll
 
 two:
-  name: MyString
-  description: MyString
-  quantity: 1
-  price: 1.5
-  category: MyString
+  name: tour guide barbie
+  description: she's a tour guide, she's a barbie
+  quantity: 100
+  price: 10.5
+  category: doll
+
+three:
+  name:
+  description:
+  quantity:
+  price:
+  category:
+
+four:
+  name:
+  description: she's a tour guide, she's a barbie
+  quantity: 100
+  price: 10.5
+  category: doll
