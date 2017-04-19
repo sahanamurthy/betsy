@@ -1,7 +1,7 @@
 class MerchantsController < ApplicationController
 
   def index
-    Merchants.all 
+    # Merchants.all 
   end
 
 end
