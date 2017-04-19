@@ -7,6 +7,13 @@ one:
   price: 1.5
   category: doll
 
+aliens_two:
+  name: aliens
+  description: little green men
+  quantity: 3
+  price: 1.5
+  category: doll
+
 two:
   name: tour guide barbie
   description: she's a tour guide, she's a barbie
@@ -27,3 +34,45 @@ four:
   quantity: 100
   price: 10.5
   category: doll
+
+no_quantity:
+  name: Woody
+  description: she's a tour guide, she's a barbie
+  quantity:
+  price: 10.5
+  category: doll
+
+odd_quantity:
+  name: Woody
+  description: she's a tour guide, she's a barbie
+  quantity: sdjlf
+  price: 10.5
+  category: doll
+
+no_price:
+  name: Woody
+  description: she's a tour guide, she's a barbie
+  quantity: 5
+  price:
+  category: doll
+
+bad_price:
+  name: Woody
+  description: she's a tour guide, she's a barbie
+  quantity: 5
+  price: bdshkvbfj
+  category: doll
+
+mean_price:
+  name: Woody
+  description: she's a tour guide, she's a barbie
+  quantity: 5
+  price: -5
+  category: doll
+
+no_category:
+  name: Woody
+  description: she's a tour guide, she's a barbie
+  quantity: 5
+  price: -5
+  category: 
