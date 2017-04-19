@@ -1,9 +1,12 @@
 require "test_helper"
 
 describe Merchant do
-  let(:merchant) { Merchant.new }
 
-  it "must be valid" do
-    value(merchant).must_be :valid?
+  describe "associations" do
+    it "has many prodcuts" do
+      ar = Merchant.reflect_on_association(:products)
+      expect(ar.macro) == :has_many
+    end
   end
+
 end
