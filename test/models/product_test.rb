@@ -46,16 +46,22 @@ describe Product do
   end
 
 
-#merging this into master with the following test commented out because
-#im getting some wierd errors on the Merchant model that I can't get green
-#right now
+  describe "testing relations" do
 
+    it "has one merchant (belongs to a merchant)" do
+      product = products(:one)
+      product.merchant.nil?.must_equal false
+    end
 
-  # describe "testing relations" do
-  #
-  #   it "has one merchant (belongs to a merchant)" do
-  #     product = products(:one)
-  #     product.merchant.nil?.must_equal false
-  #   end
+    it "can find a merchant's name through the relationship" do
+      product = products(:one)
+      product.merchant.name.must_equal "Marisol"
+    end
+
+    it "can be found through the merchant's information" do
+      merchant = merchants(:one)
+      merchant.products.find_by(name:"aliens").class.must_equal Product
+    end
+    #Order-Products class has not been built out. Will test more after
   end
 end

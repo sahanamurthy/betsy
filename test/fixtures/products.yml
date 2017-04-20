@@ -6,6 +6,7 @@ one:
   quantity: 3
   price: 1.5
   category: doll
+  merchant: :one
 
 aliens_two:
   name: aliens
@@ -75,4 +76,4 @@ no_category:
   description: she's a tour guide, she's a barbie
   quantity: 5
   price: -5
-  category: 
+  category:
