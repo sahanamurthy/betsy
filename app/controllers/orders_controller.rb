@@ -8,4 +8,10 @@ class OrdersController < ApplicationController
     @order = Order.find(params[:id])
   end
 
+  def new
+    @order = Order.new
+  end
+
+
+
 end
