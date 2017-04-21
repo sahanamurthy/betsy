@@ -24,10 +24,12 @@ describe OrdersController do
     end
   end
 
-  describe "edit" do
-    it "should get edit"
-
-
+  describe "create" do
+    it "adds an order to the database" do
+      # order[:one]
+      # post orders_path
+      # must_redirect_to orders_path
+    end
 
 
   end
