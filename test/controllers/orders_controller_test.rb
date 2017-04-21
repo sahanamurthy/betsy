@@ -24,4 +24,12 @@ describe OrdersController do
     end
   end
 
+  describe "edit" do
+    it "should get edit"
+
+
+
+
+  end
+
 end
