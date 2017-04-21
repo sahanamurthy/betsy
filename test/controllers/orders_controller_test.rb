@@ -36,7 +36,13 @@ describe OrdersController do
       post orders_path, params: order
       must_respond_with :bad_request
     end
+  end
 
+  describe "edit" do
+    # it 'should get edit' do
+    #   get edit_order_path
+    #   must_respond_with :success
+    # end
   end
 
 end
