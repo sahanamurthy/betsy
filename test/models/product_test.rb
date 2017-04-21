@@ -44,6 +44,7 @@ describe Product do
       product.valid?.must_equal false
     end
   end
+end
 
 
 #merging this into master with the following test commented out because
@@ -51,11 +52,9 @@ describe Product do
 #right now
 
 
-  # describe "testing relations" do
-  #
-  #   it "has one merchant (belongs to a merchant)" do
-  #     product = products(:one)
-  #     product.merchant.nil?.must_equal false
-  #   end
-  end
-end
+# describe "testing relations" do
+#
+#   it "has one merchant (belongs to a merchant)" do
+#     product = products(:one)
+#     product.merchant.nil?.must_equal false
+#   end
