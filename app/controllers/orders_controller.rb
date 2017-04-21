@@ -12,9 +12,21 @@ class OrdersController < ApplicationController
     @order = Order.new
   end
 
-  def create 
-
+  def create
+    @order = Order.create(order_params)
+    if @order.save
+      redirect_to orders_path
+    else
+      render :new, status: :bad_request
+      flash[:order_not_saved] = "unable to save order"
+    end
   end
 
+
+
+private
+  def order_params
+    return params.require(:order).permit(:name, :status, :email, :address, :cc_name, :cc_number, :cc_expiration, :cc_cvv, :zip_code)
+  end
 
 end
