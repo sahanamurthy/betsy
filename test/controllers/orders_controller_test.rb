@@ -1,7 +1,35 @@
 require "test_helper"
 
 describe OrdersController do
-  # it "must be a real test" do
-  #   flunk "Need real tests"
-  # end
+
+  describe "index" do
+    it "gets index" do
+      get orders_path
+      must_respond_with :success
+    end
+  end
+
+  describe "show" do
+    it "should get show" do
+      order = Order.first
+      get orders_path(order)
+      must_respond_with :success
+    end
+  end
+
+  describe "new" do
+    it "should get new" do
+      get new_order_path
+      must_respond_with :success
+    end
+  end
+
+  describe "edit" do
+    it "should get edit"
+
+
+
+
+  end
+
 end

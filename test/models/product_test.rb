@@ -46,6 +46,7 @@ describe Product do
   end
 
 
+
   describe "testing relations" do
 
     it "has one merchant (belongs to a merchant)" do

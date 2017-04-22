@@ -1,11 +1,19 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+# Read about fqixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
   name: Marisol
   username: cool_cat
   email: cool_cat@gmail.com
+<<<<<<< HEAD
   
 two:
   name: Allison
   username: ANorth
   email: agnorthrop@gmail.co
+=======
+
+two:
+  name: Allison
+  username: ANorth
+  email: agnorthrop@gmail.com
+>>>>>>> merchant
