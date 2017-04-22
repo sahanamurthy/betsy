@@ -4,8 +4,16 @@ one:
   name: Marisol
   username: cool_cat
   email: cool_cat@gmail.com
+<<<<<<< HEAD
+  
+two:
+  name: Allison
+  username: ANorth
+  email: agnorthrop@gmail.co
+=======
 
 two:
   name: Allison
   username: ANorth
   email: agnorthrop@gmail.com
+>>>>>>> merchant
