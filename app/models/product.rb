@@ -7,6 +7,11 @@ class Product < ApplicationRecord
   validates :quantity, presence: true, numericality: true
   validates :price, presence: true, numericality: {greater_than: 0}
   validates :category, presence: true
-  #TODO We need to figure out how to add a column for pictures
+
+after_initialize :defaults
+
+def defaults
+    self.img_url = "http://loremflickr.com/320/240/puppy"  if self.img_url.nil?
+end
 
 end

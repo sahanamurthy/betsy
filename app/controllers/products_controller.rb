@@ -4,16 +4,20 @@ class ProductsController < ApplicationController
   end
 
   def new
+
     @product = Product.new
+    @merchant = Merchant.first
   end
 
   def create
+  @merchant = Merchant.first
     @product = Product.new(product_params)
+    @product.merchant_id = Merchant.first.id
+    #temporarily hard-coded worried the underlying form code doesn't work though
     @product.save
     if @product.save
       redirect_to products_path
     else
-
       render :new, status: :bad_request
       flash[:failure] = "Could not add your product"
       flash[:messages] = @product.errors.messages

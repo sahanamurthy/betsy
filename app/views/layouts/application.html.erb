@@ -1,30 +1,36 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Betsy</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>Betsy</title>
+  <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
+<body>
+  <header>
+  </header>
   <body>
-<header>
-  </header
+    <section class="flash">
+      <%= flash[:status] %>
+      <% if flash[:result_text] or flash[:message] %>
+      <h3>
+        <%= flash[:status] == :failure ? "A problem occurred: " : "" %> <%= flash[:result_text] %>
+      </h3>
+    <% end %>
 
-    <% if flash[:result_text] or flash[:message] %>
-      <section class="row status <%= flash[:status] %>">
-        <h3><%= flash[:status] == :failure ? "A problem occurred: " : "" %><%= flash[:result_text] %></h3>
-        <% if flash[:message] %>
-
-            <% flash.each do |name, problems| %>
-            <em> <%= problems %></em> <br>
-            <% end %>
-
+      <% if flash[:messages] %>
+        <% flash.each do |name, problems| %>
+        <em> <%= "#{problems}" %></em> <br>
         <% end %>
-      </section>
-      <%end%>
+        <% end %>
+
+
+
+    </section>
+
 
     <%= yield %>
   </body>
-</html>
+  </html>
