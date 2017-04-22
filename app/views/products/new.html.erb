@@ -1,0 +1,12 @@
+<% if flash[:result_text] or flash[:message] %>
+  <section class="row status <%= flash[:status] %>">
+    <h3><%= flash[:status] == :failure ? "A problem occurred: " : "" %><%= flash[:result_text] %></h3>
+    <% if flash[:message] %>
+
+        <% flash.each do |name, problems| %>
+        <em> <%= problems %></em> <br>
+        <% end %>
+
+    <% end %>
+  </section>
+  <%end%>
