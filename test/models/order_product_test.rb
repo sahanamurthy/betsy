@@ -24,6 +24,11 @@ describe OrderProduct do
       result = order_product.valid?
       result.must_equal false
     end
+    it "checks that quantity is greater than 0" do
+      order_product = OrderProduct.create(quantity: "-1")
+      result = order_product.valid?
+      result.must_equal false
+    end
     it "product_id must be present" do
       order_product = OrderProduct.create(quantity: 2, order_id: orders(:one).id)
       result = order_product.valid?

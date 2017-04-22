@@ -1,7 +1,24 @@
 require "test_helper"
 
 describe OrderProductsController do
-  # it "must be a real test" do
-  #   flunk "Need real tests"
-  # end
+
+
+  describe "create" do
+    it "adds a orderproduct to the database" do
+
+    end
+  end
+
+  describe "edit" do
+
+  end
+
+  describe "update" do
+
+  end
+
+  describe "delete" do
+
+  end
+
 end
