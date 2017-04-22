@@ -1,12 +1,14 @@
-<% if flash[:result_text] or flash[:message] %>
-  <section class="row status <%= flash[:status] %>">
-    <h3><%= flash[:status] == :failure ? "A problem occurred: " : "" %><%= flash[:result_text] %></h3>
-    <% if flash[:message] %>
+<table>
 
-        <% flash.each do |name, problems| %>
-        <em> <%= problems %></em> <br>
-        <% end %>
-
-    <% end %>
-  </section>
-  <%end%>
+      <tr>
+        <td><%= @product.name%></td>
+        <td><%= link_to @product.name, product_path(@product) %></td>
+        <td><%= image_tag @product.img_url %></td>
+        <td><%= @product.description%></td>
+      </tr>
+  
+  </tbody>
+</table>
+<%= link_to "View View All Products", products_path, class: "button" %>
+<%= link_to "Add a new Product", new_product_path, class: "button" %>
+</section>

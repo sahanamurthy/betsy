@@ -1,0 +1,26 @@
+<h3>List of Products</h3>
+<section class="product-table">
+  <table>
+    <thead>
+      <tr>
+        <th width=80>Votes</th>
+        <th>Title</th>
+        <th>Created By</th>
+        <th width=100>Published</th>
+        <th width=100>Upvote</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @products.each do |product| %>
+        <tr>
+          <td><%= product.name%></td>
+          <td><%= link_to product.name, product_path(product) %></td>
+          <td><%= image_tag product.img_url %></td>
+          <td><%= product.description%></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= link_to "View View All Products", products_path, class: "button" %>
+  <%= link_to "Add a new Product", new_product_path, class: "button" %>
+</section>
