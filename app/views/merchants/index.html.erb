@@ -1,0 +1,11 @@
+<table>
+<tbody>
+  <% @merchants.each do |product| %>
+    <tr>
+      <td><%= product.name%></td>
+      <td><%= link_to product.name, merchant_path(product) %></td>
+      <td><%= product.email%></td>
+    </tr>
+  <% end %>
+</tbody>
+</table>

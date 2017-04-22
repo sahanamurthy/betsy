@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+ body{margin: 0px;}
+ header {width: 100%;}
+.woody{height:270px;width: 50%;}
+.menu{height: 50px;vertical-align: top;display:inline-block;float:right;}
+.menu a{vertical-align: top;color:black;text-decoration: none;}
