@@ -4,13 +4,6 @@ class MerchantsController < ApplicationController
     @Merchants = Merchant.all
   end
 
-  def show
-    @merchant = Merchant.find_by(id: params[:id])
-    if @merchant.nil?
-      head :not_found
-    end
-  end
-
   def new
     @merchant = Merchant.new
   end
@@ -26,13 +19,42 @@ class MerchantsController < ApplicationController
   end
 
   def edit
-    @merchant = Merchant.find(params[:id])
+    @merchant = Merchant.find_by(id: params[:id])
+    if @merchant.nil?
+      head :not_found
+    end
   end
 
   def update
-
+    @merchant = Merchant.find_by(id: params[:id])
+    if @merchant.nil?
+      head :not_found
+    else
+      @merchant.update_attributes(merchant_params)
+      if @merchant.save
+        redirect_to merchant_path(@merchant)
+      else
+        render :edit, status: :bad_request
+      end
+    end
   end
 
+  def show
+    @merchant = Merchant.find_by(id: params[:id])
+    if @merchant.nil?
+      head :not_found
+    end
+  end
+
+  def destroy
+    @merchant = Merchant.find_by(id: params[:id])
+    if @merchant.nil?
+      head :not_found
+    else
+      @merchant.destroy
+      redirect_to merchants_path
+    end
+  end
 
   private
   def merchant_params
