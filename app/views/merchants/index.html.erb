@@ -1,0 +1,10 @@
+<h1>Merchants</h1>
+<ul>
+  <% @merchants.each do |merchant| %>
+  <li>
+    <%= link_to "Merchant Id: #{merchant.id}", merchant_path(merchant.id), class: "button" %>
+  </li>
+  <% end %>
+</ul>
+
+<%= link_to "Create new merchant", new_merchant_path, class: "button" %>
