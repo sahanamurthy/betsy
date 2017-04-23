@@ -1,6 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  name: Benny Franklin
   status: In Progress
   email: bennyfrank@gmail.com
   address: 99 fremont way
@@ -11,6 +12,7 @@ one:
   zip_code: 99201
 
 two:
+  name: Humphrey Bogart
   status: MyString
   email: MyString
   address: MyString

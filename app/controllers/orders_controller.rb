@@ -23,9 +23,20 @@ class OrdersController < ApplicationController
   end
 
   def edit
-    @order = Order.find(params[:id])
+    @order = Order.find_by(params[:id])
   end
 
+  def update
+    @order = Order.find_by(id: params[:id])
+    @order.update_attributes(order_params)
+    @order.save
+
+      if @order.save
+        redirect_to order_path(params[:id])
+      else
+        render :edit, status: :bad_request
+      end 
+  end
 
 
 private
