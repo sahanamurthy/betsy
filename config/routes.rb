@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get '/orders/:id/edit', to: "orders#edit", as: 'edit_order'
   get '/orders/:id', to: "orders#show", as: 'order'
   patch '/orders/:id', to: 'orders#update'
+  delete 'orders/:id', to: 'orders#destroy'
 
 
   get '/merchants', to: "merchants#index", as: 'merchants'

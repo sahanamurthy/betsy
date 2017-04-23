@@ -35,7 +35,14 @@ class OrdersController < ApplicationController
         redirect_to order_path(params[:id])
       else
         render :edit, status: :bad_request
-      end 
+      end
+  end
+
+  def destroy
+    @order = Order.find(params[:id])
+    @order.destroy
+
+    redirect_to orders_path
   end
 
 

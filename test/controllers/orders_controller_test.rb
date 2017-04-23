@@ -66,7 +66,18 @@ describe OrdersController do
 
       must_respond_with :bad_request
     end
-
   end
 
+  describe "destroy" do
+    it "destroys the specified record in the database" do
+      order = orders(:one)
+      start_count = Order.count
+      delete order_path(order)
+      must_redirect_to orders_path
+      count_end = Order.count
+
+      count_end.must_equal start_count - 1
+    end
+
+  end
 end
