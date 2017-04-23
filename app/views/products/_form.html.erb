@@ -1,7 +1,7 @@
 <section>
   <%= form_for @product do |f| %>
 <!-- Temporarily hard coded all added items as belonging to merchant 1 -->
-    <%f.hidden_field :merchant_id, :value=> @merchant.id %>
+  
 
     <%= f.label :name %>
     <%= f.text_field :name %>

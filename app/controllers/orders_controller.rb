@@ -23,7 +23,7 @@ class OrdersController < ApplicationController
   end
 
   def edit
-    @order = Order.find_by(params[:id])
+    @order = Order.find_by(id: params[:id])
   end
 
   def update

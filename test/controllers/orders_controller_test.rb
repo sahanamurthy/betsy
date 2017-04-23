@@ -40,7 +40,8 @@ describe OrdersController do
 
   describe "edit" do
     it 'should get edit' do
-      get edit_order_path
+      order = orders(:one).id
+      get edit_order_path(order)
       must_respond_with :success
     end
   end

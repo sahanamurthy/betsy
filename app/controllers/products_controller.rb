@@ -31,10 +31,12 @@ class ProductsController < ApplicationController
 
   def edit
     @product = Product.find_by(id: params[:id])
+
   end
 
 
   def update
+    @merchant = Merchant.find_by(id: 1)
     @product = Product.find_by(id: params[:id])
     @product.update_attributes(product_params)
     @product.save

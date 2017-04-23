@@ -36,7 +36,7 @@ describe ProductsController do
 
     it "re-renders the new work form if the work is invalid" do
       start_count = Product.count
-      product_data = {product:{name:"green", quantity:5, price:10, category:"toy", merchant_id:""}}
+      product_data = {product:{name:"", quantity:5, price:10, category:"toy", merchant_id:""}}
 
       post products_path, params: product_data
       must_respond_with :bad_request
