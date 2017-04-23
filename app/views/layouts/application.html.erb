@@ -1,48 +1,51 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Betsy</title>
-  <%= csrf_meta_tags %>
+  <head>
+    <title>Betsy</title>
+    <%= csrf_meta_tags %>
 
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-</head>
-
-<body>
-  <header>
-    <%= image_tag 'https://raw.githubusercontent.com/sahanamurthy/betsy/header_2/public/woody_logo.jpg', class: "woody"%>
-    <section class = "menu">
-    <%= link_to 'Sign Up'%>
-    <%= link_to 'More Links'%>
-    <%= link_to 'More Links'%>
-    <%= link_to 'More Links'%>
-    <%= link_to 'More Links'%>
-
-    <%= image_tag 'https://raw.githubusercontent.com/sahanamurthy/betsy/header_2/public/treasure_chest.png', class:"cart"%>
-  
-  </section>
-
-  </header>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
 
   <body>
+    <header>
+      <% if session[:merchant_id] %>
+        <li>You are logged in as <%= session[:username] %></li>
+        <li><%= link_to "Logout", logout_path, method: :delete %></li>
+      <% else %>
+        <li><%= link_to "Login", login_path %></li>
+      <% end %>
+      
+      <%= image_tag 'https://raw.githubusercontent.com/sahanamurthy/betsy/header_2/public/woody_logo.jpg', class: "woody"%>
+      <section class = "menu">
+        <%= link_to 'Sign Up'%>
+        <%= link_to 'More Links'%>
+        <%= link_to 'More Links'%>
+        <%= link_to 'More Links'%>
+        <%= link_to 'More Links'%>
+
+        <%= image_tag 'https://raw.githubusercontent.com/sahanamurthy/betsy/header_2/public/treasure_chest.png', class:"cart"%>
+
+      </section>
+    </header>
+
     <section class="flash">
       <%= flash[:status] %>
       <% if flash[:result_text] or flash[:message] %>
       <h3>
         <%= flash[:status] == :failure ? "A problem occurred: " : "" %> <%= flash[:result_text] %>
       </h3>
-    <% end %>
+      <% end %>
 
       <% if flash[:messages] %>
-        <% flash.each do |name, problems| %>
-        <em> <%= "#{problems}" %></em> <br>
-        <% end %>
-        <% end %>
-
-
+      <% flash.each do |name, problems| %>
+      <em> <%= "#{problems}" %></em> <br>
+      <% end %>
+      <% end %>
 
     </section>
 
     <%= yield %>
   </body>
-  </html>
+</html>

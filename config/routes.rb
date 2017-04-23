@@ -4,7 +4,10 @@ Rails.application.routes.draw do
 # get '/orders/new', to: "orders#new", as: 'new_order'
 # get '/orders', to: "orders#index", as: 'orders'
 # get '/orders/:id', to: "orders#show", as: 'order'
-
+  root "merchants#index"
+  get "login", to: "sessions#new", as: "login"
+  post "login", to: "sessions#create"
+  delete "logout", to: "sessions#destroy", as: "logout"
 
   get '/products', to: 'products#index'
   get '/products/new', to:'products#new', as: "new_product"
