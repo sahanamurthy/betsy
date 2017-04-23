@@ -10,7 +10,7 @@ class ProductsController < ApplicationController
   end
 
   def create
-  @merchant = Merchant.first
+   @merchant = Merchant.first
     @product = Product.new(product_params)
     @product.merchant_id = Merchant.first.id
     #temporarily hard-coded worried the underlying form code doesn't work though
