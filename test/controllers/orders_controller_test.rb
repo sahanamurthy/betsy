@@ -24,4 +24,60 @@ describe OrdersController do
     end
   end
 
+  describe "create" do
+    it "adds an order to the database" do
+      order = { order: { name: "Benjamin Franklin", status: "In Progress", email: "bennyfranklin@gmail.com", address: "990 fremont", cc_name: "Benjamin Franklin", cc_number: 102999203, cc_expiration: "1772/02", cc_cvv: 802, zip_code: 99201 } }
+      post orders_path, params: order
+      must_redirect_to orders_path
+    end
+
+    it "render a new order if order is invalid" do
+      order = { order: { email: "jjpuffhead@gmail.com"} }
+      post orders_path, params: order
+      must_respond_with :bad_request
+    end
+  end
+
+  describe "edit" do
+    it 'should get edit' do
+      get edit_order_path
+      must_respond_with :success
+    end
+  end
+
+  describe "update" do
+    it "updates an existing order" do
+      order = orders(:one)
+      patch order_path(order), params: { order: { name: "Benjamin Franklin", status: "In Progress", email: "Benjaminfranklin@gmail.com", address: "990 fremont", cc_name: "Benjamin Franklin", cc_number: 102999203, cc_expiration: "1772/02", cc_cvv: 802, zip_code: 99201 } }
+    end
+
+    it "changes an order record in database" do
+      order = orders(:one)
+      order_data = {order: {name: "changed name"}}
+      patch order_path(order.id), params: order_data
+
+      must_redirect_to order_path(order.id)
+    end
+
+    it "responds with a bad request for bad data" do
+      order = orders(:one)
+      order_data = {order: {name: ""}}
+      patch order_path(order), params: order_data
+
+      must_respond_with :bad_request
+    end
+  end
+
+  describe "destroy" do
+    it "destroys the specified record in the database" do
+      order = orders(:one)
+      start_count = Order.count
+      delete order_path(order)
+      must_redirect_to orders_path
+      count_end = Order.count
+
+      count_end.must_equal start_count - 1
+    end
+
+  end
 end
