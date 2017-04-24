@@ -2,7 +2,6 @@ class MerchantsController < ApplicationController
 
   def index
     @merchants = Merchant.all
-
   end
 
   def show
@@ -42,6 +41,7 @@ class MerchantsController < ApplicationController
       @merchant.update_attributes(merchant_params)
       if @merchant.save
         redirect_to merchant_path(@merchant)
+        flash[:messages] = "Merchant # #{@merchant.id} has been updated"
       else
         render :edit, status: :bad_request
       end
