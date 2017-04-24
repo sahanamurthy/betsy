@@ -30,5 +30,5 @@ Rails.application.routes.draw do
 
   get '/merchants/:id', to: "merchants#show", as: 'merchant'
 
-
+resources :order_products
 end
