@@ -1,0 +1,12 @@
+<section>
+  <%= form_for @order_product do |f| %>
+    <%= f.label :product_id %>
+    <%= f.text_field :product_id %>
+
+    <%= f.label :quantity %>
+    <%= f.text_area :quantity %>
+
+
+    <%= f.submit class: "button" %>
+  <% end %>
+</section>
