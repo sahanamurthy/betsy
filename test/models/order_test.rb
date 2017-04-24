@@ -4,7 +4,7 @@ describe Order do
 
   it "has many order products" do
     ar = Order.reflect_on_association(:order_products)
-    expect(ar.macro) == :has_many
+    ar.macro.must_equal :has_many
   end
 
   describe "validations" do
