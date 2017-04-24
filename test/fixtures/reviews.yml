@@ -8,6 +8,24 @@ one:
 
 two:
   rating: 1
-  comment: MyString
-  name: MyString
+  comment:
+  name:
+  product_id: 1
+
+no_rating:
+  rating:
+  comment: Blah
+  name: Blaher
+  product_id: 1
+
+numerical:
+  rating: hfdk
+  comment: nlf
+  name: llgr
+  product_id: 1
+
+float:
+  rating: 2.4
+  comment:
+  name:
   product_id: 1
