@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
 #
 # get '/orders/new', to: "orders#new", as: 'new_order'
 # get '/orders', to: "orders#index", as: 'orders'
@@ -10,6 +11,7 @@ Rails.application.routes.draw do
   post '/logout', to: 'sessions#logout', as: 'logout'
 
   get "/auth/:provider/callback", to: "sessions#auth_callback"
+
 
   get '/products', to: 'products#index'
   get '/products/new', to:'products#new', as: "new_product"

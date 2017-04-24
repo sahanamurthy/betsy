@@ -47,7 +47,7 @@ describe Product do
 
 
 
-  describe "testing relations" do
+  describe "relations" do
 
     it "has one merchant (belongs to a merchant)" do
       product = products(:one)
@@ -64,5 +64,17 @@ describe Product do
       merchant.products.find_by(name:"aliens").class.must_equal Product
     end
     #Order-Products class has not been built out. Will test more after
+  end
+
+
+  describe "model methods " do
+    it "can filter products by merchant" do
+        all = Product.by_merchant(322419810)
+
+        Merchant.find(all[0].merchant_id).must_be_instance_of Merchant
+        Merchant.find(all[0].merchant_id).id.must_equal 322419810
+
+
+    end
   end
 end
