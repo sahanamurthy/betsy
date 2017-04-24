@@ -15,6 +15,7 @@ aliens_two:
   quantity: 3
   price: 1.5
   category: doll
+  merchant: :start_1
 
 two:
   name: tour guide barbie
@@ -22,6 +23,7 @@ two:
   quantity: 100
   price: 10.5
   category: doll
+  merchant: :start_1
 
 three:
   name:
@@ -29,6 +31,7 @@ three:
   quantity:
   price:
   category:
+  merchant: :start_2
 
 four:
   name:
@@ -36,6 +39,7 @@ four:
   quantity: 100
   price: 10.5
   category: doll
+  merchant: :start_2
 
 no_quantity:
   name: Woody
@@ -43,6 +47,7 @@ no_quantity:
   quantity:
   price: 10.5
   category: doll
+  merchant: :start_1
 
 odd_quantity:
   name: Woody
@@ -50,6 +55,7 @@ odd_quantity:
   quantity: sdjlf
   price: 10.5
   category: doll
+  merchant: :start_2
 
 no_price:
   name: Woody
@@ -57,6 +63,7 @@ no_price:
   quantity: 5
   price:
   category: doll
+  merchant: :start_1
 
 bad_price:
   name: Woody
@@ -64,6 +71,8 @@ bad_price:
   quantity: 5
   price: bdshkvbfj
   category: doll
+  merchant: :start_2
+
 
 mean_price:
   name: Woody
@@ -71,6 +80,7 @@ mean_price:
   quantity: 5
   price: -5
   category: doll
+  merchant: :start_1
 
 no_category:
   name: Woody
@@ -78,3 +88,4 @@ no_category:
   quantity: 5
   price: -5
   category:
+  merchant: :start_1

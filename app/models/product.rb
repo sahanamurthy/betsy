@@ -10,8 +10,11 @@ class Product < ApplicationRecord
 
 after_initialize :defaults
 
-def defaults
-    self.img_url = "http://loremflickr.com/320/240/puppy"  if self.img_url.nil?
-end
+  def defaults
+      self.img_url = "http://loremflickr.com/320/240/puppy"  if self.img_url.nil?
+  end
 
+  def self.by_merchant(id)
+    Product.where(merchant_id: id)
+  end
 end
