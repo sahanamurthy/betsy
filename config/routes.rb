@@ -5,9 +5,11 @@ Rails.application.routes.draw do
 # get '/orders', to: "orders#index", as: 'orders'
 # get '/orders/:id', to: "orders#show", as: 'order'
   root "merchants#index"
-  get "login", to: "sessions#new", as: "login"
-  post "login", to: "sessions#create"
-  delete "logout", to: "sessions#destroy", as: "logout"
+  get '/login', to: 'sessions#login', as: 'login'
+  post '/login', to: 'sessions#login'
+  post '/logout', to: 'sessions#logout', as: 'logout'
+
+  get "/auth/:provider/callback", to: "sessions#auth_callback"
 
   get '/products', to: 'products#index'
   get '/products/new', to:'products#new', as: "new_product"

@@ -10,13 +10,18 @@
 
   <body>
     <header>
-      <% if session[:merchant_id] %>
-        <li>You are logged in as <%= session[:username] %></li>
-        <li><%= link_to "Logout", logout_path, method: :delete %></li>
-      <% else %>
-        <li><%= link_to "Login", login_path %></li>
-      <% end %>
-      
+      <div class="columns large-3 small-12">
+      <section class="user-info">
+        <% if @current_merchant %>
+          <p class="text-right">Logged in as <%= link_to @current_merchant.username, merchant_path(@current_merchant) %></p>
+          <%= link_to "Log Out", logout_path, method: :post, class: "button float-right" %>
+        <% else %>
+          <p class="text-right">Not logged in</p>
+          <%= link_to "Log In", "/auth/github", class: "button float-right" %>
+        <% end %>
+      </section>
+    </div>
+
       <%= image_tag 'https://raw.githubusercontent.com/sahanamurthy/betsy/header_2/public/woody_logo.jpg', class: "woody"%>
       <section class = "menu">
         <%= link_to 'Sign Up'%>

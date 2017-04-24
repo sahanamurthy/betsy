@@ -1,28 +1,24 @@
 class SessionsController < ApplicationController
+  def auth_callback
+    auth_hash = request.env['omniauth.auth']
 
-  def new
-  end
+    merchant = Merchant.from_github(auth_hash)
 
-  def create
-    merchant = Merchant.find_by(username: params[:username])
-	  if merchant
+    if merchant.save
       session[:merchant_id] = merchant.id
-      session[:username] = merchant.username
-      redirect_to root_path
+      flash[:message] = "Successfully logged in as merchant #{merchant.username}"
     else
-      render :new_merchant
-      # new_merchant = Merchant.create(username: params[:username])
-      # session[:merchant_id] = new_merchant.id
-      # session[:username] = new_merchant.username
-      # flash[:success] = "Successfully created new merchant #{new_merchant.username} with ID #{new_merchant.id}"
-      # redirect_to root_path
+      flash[:message] = "Could not log in"
+      user.errors.messages.each do |field, problem|
+        flash[:field] = problem.join(", ")
+      end
     end
-  end
-
-  def destroy
-    session[:merchant_id] = nil
-    flash[:logout] = "You're logged out!"
     redirect_to root_path
   end
 
+  def logout
+   session[:merchant_id] = nil
+   flash[:result_text] = "Successfully logged out"
+   redirect_to root_path
+ end
 end
