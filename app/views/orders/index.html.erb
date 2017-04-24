@@ -1,0 +1,4 @@
+<h1> All Orders </h1>
+<% @orders.each do |order| %>
+  <p><%= link_to order.id, order_path(order.id) %><%=" #{order.name}"%><p>
+<%end%>

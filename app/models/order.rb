@@ -10,4 +10,8 @@ class Order < ApplicationRecord
   validates :cc_cvv, presence: true
   validates :zip_code, presence: true
 
+
+  
+
+
 end
