@@ -43,5 +43,7 @@ Rails.application.routes.draw do
 
 
 
+  resources :order_products, except: :new
 
+  get '/products/:product_id/order_products/new', to: "order_products#new", as: "new_order_product"
 end
