@@ -12,19 +12,17 @@ class OrdersController < ApplicationController
     #an array of order-products associated with the Order
         #order #4
     @product_names = @order.show_products(@order.id)
-
-
-
-
   end
 
   def new
     @order = Order.new
+    @order.status = "pending"
   end
 
   def create
     @order = Order.create(order_params)
     if @order.save
+      @order.status = "paid"
       redirect_to orders_path
     else
       render :new, status: :bad_request
