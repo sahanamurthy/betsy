@@ -9,7 +9,6 @@ class Product < ApplicationRecord
   validates :name, presence: true, uniqueness: true
   validates :quantity, presence: true, numericality: true
   validates :price, presence: true, numericality: {greater_than: 0}
-  validates :category, presence: true
 
 after_initialize :defaults
 
