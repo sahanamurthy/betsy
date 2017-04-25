@@ -8,8 +8,9 @@
   <td rowspan = "3" >
 <p> Products:
   <%@product_names.each_with_index do |product, index|%>
-  <p><%= index + 1%>.  <%= product.name %> <%= product.price %>
+  <p><%= index + 1%>.  <%= link_to product.name, products_path(product.id) %> $<%= product.price %>
   <%end%>
+  <p>Subtotal:</p>
 </p>
 </tr>
 <tr>

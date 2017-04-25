@@ -16,19 +16,20 @@ class OrdersController < ApplicationController
   end
 
   def new
-    @order = Order.new
-    @order.status = "pending"
+    @order = Order.new(status: "pending")
+    # @order.status = "pending"
   end
 
   def create
     @order = Order.create(order_params)
-    if @order.save
-      @order.status = "paid"
-      redirect_to order_summary_path(@order)
-    else
-      render :new, status: :bad_request
-      flash[:order_not_saved] = "unable to save order"
-    end
+    # if
+    @order.save
+      # @order.status = "paid"
+      # redirect_to order_summary_path(@order)
+    # else
+    #   render :new, status: :bad_request
+    #   flash[:order_not_saved] = "unable to save order"
+    # end
   end
 
   def edit
