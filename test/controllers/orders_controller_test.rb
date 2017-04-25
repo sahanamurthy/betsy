@@ -80,5 +80,13 @@ describe OrdersController do
       count_end.must_equal start_count - 1
     end
 
+  describe "order_summary" do
+    it "finds the correct order" do
+      order = orders(:one).id
+      get order_summary_path(order)
+      must_respond_with :success
+    end
+  end
+
   end
 end
