@@ -10,6 +10,7 @@
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
+
 !/log/.keep
 !/tmp/.keep
 
@@ -17,3 +18,6 @@
 .byebug_history
 
 .env
+#Ignore all coverage files
+!/coverage/*
+!/coverage/.*
