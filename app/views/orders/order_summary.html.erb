@@ -1,4 +1,15 @@
 <h1> Order Confirmation </h1>
 <table>
   <tr colspan = "3">
-<%= @order.id %>
+    <th><%= @order.id %></th>
+</tr>
+<tr>
+  <td>Name: <%= @order.name %></td>
+  <td rowspan = "3" >
+</tr>
+<tr>
+  <td>Status: <%= @order.status %><td>
+</tr>
+<tr>
+  <td>Shipping Address: <%= @order.address %></td>
+</tr>
