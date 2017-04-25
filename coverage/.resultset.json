@@ -1,35 +1,35 @@
 {
   "MiniTest": {
     "coverage": {
-      "/Users/sahanamurthy/Ada/Projects/betsy/app/helpers/application_helper.rb": [
+      "/Users/allisonnorthrop/ada/09_week/betsy/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/sahanamurthy/Ada/Projects/betsy/app/helpers/merchants_helper.rb": [
+      "/Users/allisonnorthrop/ada/09_week/betsy/app/helpers/merchants_helper.rb": [
         1,
         null
       ],
-      "/Users/sahanamurthy/Ada/Projects/betsy/app/helpers/order_products_helper.rb": [
+      "/Users/allisonnorthrop/ada/09_week/betsy/app/helpers/order_products_helper.rb": [
         1,
         null
       ],
-      "/Users/sahanamurthy/Ada/Projects/betsy/app/helpers/orders_helper.rb": [
+      "/Users/allisonnorthrop/ada/09_week/betsy/app/helpers/orders_helper.rb": [
         1,
         null
       ],
-      "/Users/sahanamurthy/Ada/Projects/betsy/app/helpers/products_helper.rb": [
+      "/Users/allisonnorthrop/ada/09_week/betsy/app/helpers/products_helper.rb": [
         1,
         null
       ],
-      "/Users/sahanamurthy/Ada/Projects/betsy/app/helpers/reviews_helper.rb": [
+      "/Users/allisonnorthrop/ada/09_week/betsy/app/helpers/reviews_helper.rb": [
         1,
         null
       ],
-      "/Users/sahanamurthy/Ada/Projects/betsy/app/helpers/sessions_helper.rb": [
+      "/Users/allisonnorthrop/ada/09_week/betsy/app/helpers/sessions_helper.rb": [
         1,
         null
       ],
-      "/Users/sahanamurthy/Ada/Projects/betsy/app/controllers/merchants_controller.rb": [
+      "/Users/allisonnorthrop/ada/09_week/betsy/app/controllers/merchants_controller.rb": [
         1,
         null,
         1,
@@ -103,7 +103,7 @@
         null,
         null
       ],
-      "/Users/sahanamurthy/Ada/Projects/betsy/app/controllers/application_controller.rb": [
+      "/Users/allisonnorthrop/ada/09_week/betsy/app/controllers/application_controller.rb": [
         1,
         1,
         1,
@@ -115,7 +115,7 @@
         null,
         1,
         1,
-        48,
+        50,
         0,
         null,
         null,
@@ -130,7 +130,7 @@
         null,
         null
       ],
-      "/Users/sahanamurthy/Ada/Projects/betsy/test/controllers/order_products_controller_test.rb": [
+      "/Users/allisonnorthrop/ada/09_week/betsy/test/controllers/order_products_controller_test.rb": [
         1,
         null,
         1,
@@ -156,10 +156,16 @@
         null,
         null
       ],
-      "/Users/sahanamurthy/Ada/Projects/betsy/app/controllers/order_products_controller.rb": [
+      "/Users/allisonnorthrop/ada/09_week/betsy/app/controllers/order_products_controller.rb": [
         1,
         null,
         1,
+        0,
+        null,
+        1,
+        0,
+        0,
+        null,
         0,
         0,
         null,
@@ -191,7 +197,7 @@
         null,
         null
       ],
-      "/Users/sahanamurthy/Ada/Projects/betsy/test/controllers/orders_controller_test.rb": [
+      "/Users/allisonnorthrop/ada/09_week/betsy/test/controllers/orders_controller_test.rb": [
         1,
         null,
         1,
@@ -277,7 +283,7 @@
         null,
         null
       ],
-      "/Users/sahanamurthy/Ada/Projects/betsy/app/controllers/orders_controller.rb": [
+      "/Users/allisonnorthrop/ada/09_week/betsy/app/controllers/orders_controller.rb": [
         1,
         null,
         1,
@@ -285,16 +291,24 @@
         null,
         null,
         1,
+        null,
+        null,
+        null,
+        0,
+        null,
+        null,
         0,
         null,
         null,
         1,
         1,
+        1,
         null,
         null,
         1,
         2,
         2,
+        1,
         1,
         null,
         1,
@@ -333,7 +347,7 @@
         null,
         null
       ],
-      "/Users/sahanamurthy/Ada/Projects/betsy/test/controllers/products_controller_test.rb": [
+      "/Users/allisonnorthrop/ada/09_week/betsy/test/controllers/products_controller_test.rb": [
         1,
         null,
         1,
@@ -441,7 +455,7 @@
         null,
         null
       ],
-      "/Users/sahanamurthy/Ada/Projects/betsy/app/controllers/products_controller.rb": [
+      "/Users/allisonnorthrop/ada/09_week/betsy/app/controllers/products_controller.rb": [
         1,
         1,
         2,
@@ -504,7 +518,7 @@
         null,
         null
       ],
-      "/Users/sahanamurthy/Ada/Projects/betsy/test/controllers/reviews_controller_test.rb": [
+      "/Users/allisonnorthrop/ada/09_week/betsy/test/controllers/reviews_controller_test.rb": [
         1,
         null,
         1,
@@ -645,11 +659,35 @@
         1,
         1,
         null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
         null,
         null,
         null
       ],
-      "/Users/sahanamurthy/Ada/Projects/betsy/app/controllers/reviews_controller.rb": [
+      "/Users/allisonnorthrop/ada/09_week/betsy/app/controllers/reviews_controller.rb": [
         1,
         null,
         1,
@@ -696,6 +734,16 @@
         null,
         1,
         null,
+        null,
+        null,
+        null,
+        1,
+        2,
+        2,
+        1,
+        null,
+        1,
+        1,
         null,
         null,
         null,
@@ -705,7 +753,7 @@
         null,
         null
       ],
-      "/Users/sahanamurthy/Ada/Projects/betsy/test/controllers/sessions_controller_test.rb": [
+      "/Users/allisonnorthrop/ada/09_week/betsy/test/controllers/sessions_controller_test.rb": [
         1,
         null,
         1,
@@ -714,7 +762,7 @@
         null,
         null
       ],
-      "/Users/sahanamurthy/Ada/Projects/betsy/app/controllers/sessions_controller.rb": [
+      "/Users/allisonnorthrop/ada/09_week/betsy/app/controllers/sessions_controller.rb": [
         1,
         1,
         0,
@@ -746,7 +794,7 @@
         null,
         null
       ],
-      "/Users/sahanamurthy/Ada/Projects/betsy/test/models/merchant_test.rb": [
+      "/Users/allisonnorthrop/ada/09_week/betsy/test/models/merchant_test.rb": [
         1,
         null,
         1,
@@ -758,149 +806,6 @@
         null,
         null,
         1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/Users/sahanamurthy/Ada/Projects/betsy/app/models/merchant.rb": [
-        1,
-        1,
-        1,
-        1,
-        null,
-        1,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        null,
-        null
-      ],
-      "/Users/sahanamurthy/Ada/Projects/betsy/app/models/application_record.rb": [
-        1,
-        1,
-        null
-      ],
-      "/Users/sahanamurthy/Ada/Projects/betsy/test/models/order_product_test.rb": [
-        1,
-        null,
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        null,
-        1,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/Users/sahanamurthy/Ada/Projects/betsy/app/models/order_product.rb": [
-        1,
-        1,
-        1,
-        1,
-        1,
-        null
-      ],
-      "/Users/sahanamurthy/Ada/Projects/betsy/test/models/order_test.rb": [
-        1,
-        null,
-        1,
-        null,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
         1,
         1,
         1,
@@ -932,7 +837,57 @@
         null,
         null
       ],
-      "/Users/sahanamurthy/Ada/Projects/betsy/app/models/order.rb": [
+      "/Users/allisonnorthrop/ada/09_week/betsy/app/models/merchant.rb": [
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null
+      ],
+      "/Users/allisonnorthrop/ada/09_week/betsy/app/models/application_record.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/allisonnorthrop/ada/09_week/betsy/test/models/order_product_test.rb": [
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
         1,
         1,
         null,
@@ -941,9 +896,92 @@
         1,
         1,
         1,
+        null,
+        null,
         1,
         1,
         1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/allisonnorthrop/ada/09_week/betsy/app/models/order_product.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/allisonnorthrop/ada/09_week/betsy/test/models/order_test.rb": [
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
         null,
         null,
         null,
@@ -951,7 +989,44 @@
         null,
         null
       ],
-      "/Users/sahanamurthy/Ada/Projects/betsy/test/models/product_test.rb": [
+      "/Users/allisonnorthrop/ada/09_week/betsy/app/models/order.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/allisonnorthrop/ada/09_week/betsy/test/models/product_test.rb": [
         1,
         null,
         1,
@@ -1033,7 +1108,7 @@
         null,
         null
       ],
-      "/Users/sahanamurthy/Ada/Projects/betsy/app/models/product.rb": [
+      "/Users/allisonnorthrop/ada/09_week/betsy/app/models/product.rb": [
         1,
         1,
         1,
@@ -1056,7 +1131,7 @@
         null,
         null
       ],
-      "/Users/sahanamurthy/Ada/Projects/betsy/test/models/review_test.rb": [
+      "/Users/allisonnorthrop/ada/09_week/betsy/test/models/review_test.rb": [
         1,
         null,
         1,
@@ -1140,14 +1215,14 @@
         null,
         null
       ],
-      "/Users/sahanamurthy/Ada/Projects/betsy/app/models/review.rb": [
+      "/Users/allisonnorthrop/ada/09_week/betsy/app/models/review.rb": [
         1,
         1,
         1,
         null
       ]
     },
-    "timestamp": 1493092270
+    "timestamp": 1493145545
   },
   "Unit Tests": {
     "coverage": {
