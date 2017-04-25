@@ -1,14 +1,22 @@
 class OrderProductsController < ApplicationController
 
+  def index
+    @order_products = OrderProduct.all
+  end
+
   def new
     @order_product = OrderProduct.new(product_id: params[:product_id])
   end
+
   def create
     @order = order
     @order_product = OrderProduct.create!(order_id: @order.id, product_id: params["order_product"]["product_id"], quantity: 1)
 
     redirect_to products_path
     flash[:messages] = "Your product was added to the cart!"
+  end
+  def edit
+    @order_product = OrderProduct.find_by(id: params[:id])
   end
 
   def update
