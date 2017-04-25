@@ -6,9 +6,10 @@
         <td><%= image_tag @product.img_url %></td>
         <td><%= @product.description%></td>
       </tr>
-  
+
   </tbody>
 </table>
 <%= link_to "View View All Products", products_path, class: "button" %>
 <%= link_to "Add a new Product", new_product_path, class: "button" %>
+<%= link_to "Add to Cart", new_order_product_path(@product.id), class: "button" %>
 </section>
