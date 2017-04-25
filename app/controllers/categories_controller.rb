@@ -20,6 +20,7 @@ class CategoriesController < ApplicationController
     end
   end
 
+
   def destroy
     @category = Category.find_by(id:params[:id])
     @category.destroy

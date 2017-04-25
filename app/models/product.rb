@@ -19,4 +19,8 @@ after_initialize :defaults
   def self.by_merchant(id)
     Product.where(merchant_id: id)
   end
+
+  def add_category(id)
+    self.categories << Category.find(id)
+  end
 end

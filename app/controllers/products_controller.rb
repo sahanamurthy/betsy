@@ -1,14 +1,14 @@
 class ProductsController < ApplicationController
   def index
     if params[:category_id]
-      @products = Category.find_by(category_id: params[:category_id]).products
+      @products = Category.find_by(id:params[:category_id]).products
     else
       @products = Product.all
     end
   end
 
-  def new
 
+  def new
     @product = Product.new
     @merchant = Merchant.first
   end
@@ -35,7 +35,6 @@ class ProductsController < ApplicationController
 
   def edit
     @product = Product.find_by(id: params[:id])
-
   end
 
 
@@ -50,6 +49,12 @@ class ProductsController < ApplicationController
       else
         render :edit, status: :bad_request
       end
+  end
+
+  def new_category
+    @product = Product.find_by(id:params[:id])
+    
+    @product.add_category(params[:category_id])
   end
 
   def destroy
