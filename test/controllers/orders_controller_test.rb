@@ -32,19 +32,6 @@ describe OrdersController do
     count_end = Order.count
     count_end.must_equal start_count + 1
     end
-
-    # it "saves an order as 'paid'" do skip
-    #   order = { order: { name: "Benjamin Franklin", status: "pending", email: "bennyfranklin@gmail.com", address: "990 fremont", cc_name: "Benjamin Franklin", cc_number: 102999203, cc_expiration: "1772/02", cc_cvv: 802, zip_code: 99201 } }
-    #   post orders_path, params: order
-    #   order.status.must_equal
-    #   # review_data[:review] [:rating]
-    # end
-    #
-    # it "renders a new order if order is invalid" do skip
-    #   order = { order: { email: "jjpuffhead@gmail.com" } }
-    #   post orders_path, params: order
-    #   must_respond_with :bad_request
-    # end
   end
 
   describe "edit" do

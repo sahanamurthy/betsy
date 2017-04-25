@@ -42,6 +42,7 @@ class OrdersController < ApplicationController
     @order.save
 
       if @order.save
+        # @order.status = "paid"
         redirect_to order_path(params[:id])
       else
         render :edit, status: :bad_request
