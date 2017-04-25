@@ -29,6 +29,7 @@ Rails.application.routes.draw do
   get '/orders/:id/edit', to: "orders#edit", as: 'edit_order'
   patch '/orders/:id', to: 'orders#update'
   delete 'orders/:id', to: 'orders#destroy'
+  get '/orders/:id/summary', to: 'orders#order_summary', as: "order_summary"
 
 
   # get '/merchants', to: "merchants#index", as: 'merchants'
@@ -40,7 +41,7 @@ Rails.application.routes.draw do
   # get '/merchants/:id', to: "merchants#show", as: 'merchant'
 
   resources :merchants
-  resources :reviews 
+  resources :reviews
 
 
   resources :order_products, except: :new

@@ -54,6 +54,9 @@ class OrdersController < ApplicationController
     redirect_to orders_path
   end
 
+  def order_summary
+    @order = Order.where(id: params[:id])
+  end
 
 private
   def order_params
