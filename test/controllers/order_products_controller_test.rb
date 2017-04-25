@@ -36,27 +36,31 @@ describe OrderProductsController do
 
   describe "edit" do
     it "find orderproduct that exists" do
-      # order_product = {order_product: { product_id: 1, order_id: 1, quantity: 1}}
       order_product = order_products(:one)
       get edit_order_product_path(order_product.id)
       must_respond_with :success
-
     end
   end
 
   describe "update" do
-    it "updates the quantity of an orderproduct" do skip
-      order_product = {order_product: { product_id: 1, order_id: 1, quantity: 1}}
-      patch order_product_path(order_product), params: { order_product: { quantity: 10 }}
-      must_redirect_to order_product_path(order_product)
-      order_product.quantity.must_equal 10
+    it "updates the quantity of an orderproduct" do
+      order_product = {order_product: { product_id: 1, quantity: 1}}
+      post order_products_path, params: order_product
+      order = Order.last
+      patch order_product_path(order),
+      params: { order_product:
+        { product_id: 1, quantity: 10 }
+        }
+        order.order_products.where(product_id: 1).first.quantity.must_equal 10
+      end
+
+    end
+
+    describe "delete" do
+      it "deletes " do skip
+
+      end
 
     end
 
   end
-
-  describe "delete" do
-
-  end
-
-end
