@@ -1,0 +1,7 @@
+<% @reviews.each do |review| %>
+  <h2>Id: <%= review.id %></h2>
+  <h2>By: <%= review.name%></h2>
+  <h2>Product Id: <%= review.product_id %></h2>
+  <h2>Rating: <%= review.rating %></h2>
+  <h2>Comment: <%= review.comment %></h2>
+<% end %>
