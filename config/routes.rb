@@ -38,7 +38,10 @@ Rails.application.routes.draw do
   # patch '/merchants/:id', to: "merchants#update"
   #
   # get '/merchants/:id', to: "merchants#show", as: 'merchant'
+  resources :categories do
+    get 'products', to:'products#index'
 
+  end
   resources :merchants
   resources :reviews
 

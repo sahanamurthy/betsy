@@ -18,6 +18,13 @@
 .byebug_history
 
 .env
+<<<<<<< HEAD
 #Ignore all coverage files
 !/coverage/*
 !/coverage/.*
+=======
+
+#Ignore all coverage files
+coverage/*
+coverage/.*
+>>>>>>> e53422b433ba22b0f09425163becc95fba07b5e8
