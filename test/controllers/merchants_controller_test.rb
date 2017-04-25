@@ -22,7 +22,8 @@ describe MerchantsController do
       must_respond_with :success
     end
     it "will return 404 if merchant does not exist" do
-      get merchant_path(99)
+      merchant_id = Merchant.last.id + 1
+      get edit_merchant_path(merchant_id)
       must_respond_with :not_found
     end
   end
@@ -57,7 +58,8 @@ describe MerchantsController do
     end
 
     it "returns 404 for a merchant who DNE" do
-      get edit_merchant_path(100)
+      merchant_id = Merchant.last.id + 1
+      get edit_merchant_path(merchant_id)
       must_respond_with :not_found
     end
   end
