@@ -1,11 +1,16 @@
 <h1> Order Confirmation </h1>
 <table>
   <tr colspan = "3">
-    <th><%= @order.id %></th>
+    <th>Order id: <%= @order.id %></th>
 </tr>
 <tr>
   <td>Name: <%= @order.name %></td>
   <td rowspan = "3" >
+<p> Products:
+  <%@product_names.each_with_index do |product, index|%>
+  <p><%= index + 1%>.  <%= product.name %>
+  <%end%>
+</p>
 </tr>
 <tr>
   <td>Status: <%= @order.status %><td>

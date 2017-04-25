@@ -12,6 +12,7 @@ class OrdersController < ApplicationController
     #an array of order-products associated with the Order
         #order #4
     @product_names = @order.show_products(@order.id)
+    #TODO THIS NEEDS TO BE TESTED
   end
 
   def new
@@ -55,6 +56,8 @@ class OrdersController < ApplicationController
 
   def order_summary
     @order = Order.find(params[:id])
+    @product_names = @order.show_products(@order.id)
+
   end
 
 private
