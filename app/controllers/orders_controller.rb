@@ -23,8 +23,7 @@ class OrdersController < ApplicationController
     @order = Order.create(order_params)
     if @order.save
       @order.status = "paid"
-      redirect_to orders_path
-      #TODO this should actually redirect to the order summary
+      redirect_to order_summary_path(params[:id])
     else
       render :new, status: :bad_request
       flash[:order_not_saved] = "unable to save order"
@@ -55,7 +54,7 @@ class OrdersController < ApplicationController
   end
 
   def order_summary
-    @order = Order.where(id: params[:id])
+    @order = Order.find(params[:id])
   end
 
 private
