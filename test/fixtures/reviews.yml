@@ -29,3 +29,11 @@ float:
   comment:
   name:
   product_id: 1
+
+five:
+  rating: 5
+  comment:
+  name:
+  product_id: 1
+
+    

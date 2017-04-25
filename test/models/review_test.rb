@@ -19,6 +19,11 @@ describe Review do
       product.reviews.first.class.must_equal Review
     end
 
+    it "contains a product id" do
+      review = reviews(:one)
+      review.must_respond_to :product_id
+    end
+
   end
 
   describe "validations" do
@@ -50,6 +55,23 @@ describe Review do
     end
 
     it "requires a rating between 1-5" do
-      
+      review = reviews(:one)
+      review.valid?.must_equal true
+
+      preview = reviews(:five)
+      review.valid?.must_equal true
+
+      mreview = reviews(:float)
+      mreview.rating = 6
+      mreview.valid?.must_equal false
+
+      breview = reviews(:numerical)
+      breview.rating = 0
+      breview.valid?.must_equal false
+
+      dreview = reviews(:two)
+      dreview.rating = -1
+      dreview.valid?.must_equal false
+    end
   end
 end
