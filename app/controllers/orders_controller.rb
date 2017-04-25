@@ -5,7 +5,17 @@ class OrdersController < ApplicationController
   end
 
   def show
+    #finding the Order object with the id from url:
+        #Current test url:('localhost/:3000/orders/4')
+        #Order #4  has Order-Products associated with it in the db
     @order = Order.find(params[:id])
+    #an array of order-products associated with the Order
+        #order #4
+    @product_names = @order.show_products(@order.id)
+
+
+
+
   end
 
   def new

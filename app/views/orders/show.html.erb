@@ -1,1 +1,20 @@
+<table>
+  <tr colspan = "3">
+    <th> Order Identification Number: <%= @order[:id]  %></th>
+  </tr>
+  <tr>
+    <td> Name: <%= @order[:name]%> </td>
+    <td rowspan = "3" >
+  <p> Products:
+    <%@product_names.each_with_index do |product, index|%>
+    <p><%= index + 1%>.  <%= product.name %>
+    <%end%>
+  </td>
+  </tr>
 
+  <tr>
+    <td> Email: <%= @order[:email]%> </td>
+  </tr>
+  <tr>
+    <td> Order Status: <%= @order[:status]%> </td>
+  </tr>
