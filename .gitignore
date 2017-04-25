@@ -17,3 +17,7 @@
 .byebug_history
 
 .env
+
+#Ignore all coverage files
+coverage/*
+coverage/.*
