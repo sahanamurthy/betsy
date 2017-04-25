@@ -24,6 +24,7 @@ class OrdersController < ApplicationController
     if @order.save
       @order.status = "paid"
       redirect_to orders_path
+      #TODO this should actually redirect to the order summary
     else
       render :new, status: :bad_request
       flash[:order_not_saved] = "unable to save order"
