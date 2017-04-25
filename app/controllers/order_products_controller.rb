@@ -1,11 +1,17 @@
 class OrderProductsController < ApplicationController
 
+  def index
+    @order_products = OrderProduct.all
+    @products = Product.all
+  end
+
   def new
     @order_product = OrderProduct.new(product_id: params[:product_id])
   end
   def create
     @order = order
     @order_product = OrderProduct.create!(order_id: @order.id, product_id: params["order_product"]["product_id"], quantity: 1)
+    raise
 
     redirect_to products_path
     flash[:messages] = "Your product was added to the cart!"

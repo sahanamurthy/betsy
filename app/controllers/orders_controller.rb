@@ -6,6 +6,9 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+    @product = Product.where(params[:id])
+    @order_products = OrderProduct.where(product_id: params[:id])
+    raise
   end
 
   def new
