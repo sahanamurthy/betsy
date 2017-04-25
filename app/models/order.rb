@@ -11,7 +11,13 @@ class Order < ApplicationRecord
   # validates :zip_code, presence: true
 
 
-  
+def show_products(id)
+  order = Order.find(id)
+  @order_products = OrderProduct.where(order_id: id)
+  @product_names = @order_products.map{|item| Product.find_by(id: item.product_id)}
+
+end
+
 
 
 end
