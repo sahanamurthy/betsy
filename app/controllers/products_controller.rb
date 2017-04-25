@@ -7,16 +7,19 @@ class ProductsController < ApplicationController
     end
   end
 
-
   def new
     @product = Product.new
     @merchant = Merchant.first
   end
 
   def create
-   @merchant = Merchant.first
+    @categories = Category.all
     @product = Product.new(product_params)
-    @product.merchant_id = Merchant.first.id
+    @product.merchant_id = session[:merchant_id]
+    #This code is calling going into the params hash, then the product hash, then the category_ids.
+    #It is then iterating through all the category ids, except the first
+    #And for each category id, it is passing the given ID as an attribute for the product
+    params[:product][:category_ids].each{|id| @product.add_category(id)}
     #temporarily hard-coded worried the underlying form code doesn't work though
     @product.save
     if @product.save
@@ -42,6 +45,7 @@ class ProductsController < ApplicationController
     @merchant = Merchant.find_by(id: 1)
     @product = Product.find_by(id: params[:id])
     @product.update_attributes(product_params)
+    params[:product][:category_ids][1..-1].each{|id| @product.add_category(id)}
     @product.save
 
       if @product.save
@@ -51,11 +55,6 @@ class ProductsController < ApplicationController
       end
   end
 
-  def new_category
-    @product = Product.find_by(id:params[:id])
-    
-    @product.add_category(params[:category_id])
-  end
 
   def destroy
     @product = Product.find_by(id: params[:id])
