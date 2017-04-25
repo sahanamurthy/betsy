@@ -19,4 +19,5 @@
 .env
 
 #Ignore all coverage files
-!/coverage/*
+coverage/*
+coverage/.*
