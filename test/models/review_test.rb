@@ -28,6 +28,11 @@ describe Review do
 
   describe "validations" do
 
+    it "responds to rating" do
+      review = reviews(:one)
+      review.must_respond_to :rating
+    end 
+
     it "is invalid without a rating" do
       review = reviews(:no_rating)
       review.valid?.must_equal false
