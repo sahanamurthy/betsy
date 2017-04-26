@@ -12,22 +12,24 @@ class OrdersController < ApplicationController
     #an array of order-products associated with the Order
         #order #4
     @product_names = @order.show_products(@order.id)
+    #TODO THIS NEEDS TO BE TESTED
   end
 
   def new
-    @order = Order.new
-    @order.status = "pending"
+    @order = Order.new(status: "pending")
+    # @order.status = "pending"
   end
 
   def create
     @order = Order.create(order_params)
-    if @order.save
-      @order.status = "paid"
-      redirect_to orders_path
-    else
-      render :new, status: :bad_request
-      flash[:order_not_saved] = "unable to save order"
-    end
+    # if
+    @order.save
+      # @order.status = "paid"
+      # redirect_to order_summary_path(@order)
+    # else
+    #   render :new, status: :bad_request
+    #   flash[:order_not_saved] = "unable to save order"
+    # end
   end
 
   def edit
@@ -37,12 +39,16 @@ class OrdersController < ApplicationController
   def update
     @order = Order.find_by(id: params[:id])
     @order.update_attributes(order_params)
+    @order.status = "paid"
     @order.save
 
       if @order.save
-        redirect_to order_path(params[:id])
+        # @order.status = "paid"
+        redirect_to order_summary_path(@order)
       else
         render :edit, status: :bad_request
+        flash[:order_not_saved] = "unable to save order"
+
       end
   end
 
@@ -53,6 +59,11 @@ class OrdersController < ApplicationController
     redirect_to orders_path
   end
 
+  def order_summary
+    @order = Order.find(params[:id])
+    @product_names = @order.show_products(@order.id)
+
+  end
 
 private
   def order_params

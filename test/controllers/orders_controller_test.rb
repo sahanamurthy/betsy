@@ -22,19 +22,20 @@ describe OrdersController do
       get new_order_path
       must_respond_with :success
     end
+
+    it "sets the status to 'pending'" do
+      #TODO
+    end
+
   end
 
   describe "create" do
     it "adds an order to the database" do
-      order = { order: { name: "Benjamin Franklin", status: "pending", email: "bennyfranklin@gmail.com", address: "990 fremont", cc_name: "Benjamin Franklin", cc_number: 102999203, cc_expiration: "1772/02", cc_cvv: 802, zip_code: 99201 } }
-      post orders_path, params: order
-      must_redirect_to orders_path
-    end
-
-    it "renders a new order if order is invalid" do
-      order = { order: { email: "jjpuffhead@gmail.com" } }
-      post orders_path, params: order
-      must_respond_with :bad_request
+    start_count = Order.count
+    order = { order: { name: "Benjamin Franklin", status: "paid", email: "bennyfranklin@gmail.com", address: "990 fremont", cc_name: "Benjamin Franklin", cc_number: 102999203, cc_expiration: "1772/02", cc_cvv: 802, zip_code: 99201 } }
+    post orders_path, params: order
+    count_end = Order.count
+    count_end.must_equal start_count + 1
     end
   end
 
@@ -57,7 +58,8 @@ describe OrdersController do
       order_data = {order: {name: "changed name"}}
       patch order_path(order.id), params: order_data
 
-      must_redirect_to order_path(order.id)
+      # must_redirect_to order_path(order.id)
+      must_redirect_to order_summary_path(order.id)
     end
 
     it "responds with a bad request for bad data" do
@@ -79,6 +81,14 @@ describe OrdersController do
 
       count_end.must_equal start_count - 1
     end
+
+  describe "order_summary" do
+    it "finds the correct order" do
+      order = orders(:one).id
+      get order_summary_path(order)
+      must_respond_with :success
+    end
+  end
 
   end
 end
