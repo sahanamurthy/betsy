@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#login'
   post '/logout', to: 'sessions#logout', as: 'logout'
 
-  get "/auth/:provider/callback", to: "sessions#auth_callback"
+  get "/auth/:provider/callback", to: "sessions#auth_callback", as: 'auth_callback'
 
 
   get '/products', to: 'products#index'

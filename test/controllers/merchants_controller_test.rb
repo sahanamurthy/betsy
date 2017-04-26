@@ -136,4 +136,5 @@ describe MerchantsController do
     end
   end
 
+
 end
