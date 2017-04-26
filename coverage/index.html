@@ -14,14 +14,14 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2017-04-25T23:07:02-07:00">2017-04-25T23:07:02-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2017-04-25T23:39:01-07:00">2017-04-25T23:39:01-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="yellow">83.78%</span></span>
+    (<span class="covered_percent"><span class="yellow">83.93%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
@@ -32,8 +32,8 @@
   <a name="AllFiles"></a>
   <div>
     <b>17</b> files in total.
-    <b>111</b> relevant lines. 
-    <span class="green"><b>93</b> lines covered</span> and
+    <b>112</b> relevant lines. 
+    <span class="green"><b>94</b> lines covered</span> and
     <span class="red"><b>18</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -183,9 +183,9 @@
       <tr>
         <td class="strong"><a href="#008a509084574f5b1efc62d74eade1560d7427c9" class="src_link" title="app/models/order.rb">app/models/order.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>35</td>
-        <td>16</td>
-        <td>16</td>
+        <td>36</td>
+        <td>17</td>
+        <td>17</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -1297,8 +1297,8 @@
     <h3>app/models/order.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>16</b> relevant lines. 
-      <span class="green"><b>16</b> lines covered</span> and
+      <b>17</b> relevant lines. 
+      <span class="green"><b>17</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -1321,55 +1321,55 @@
         <li class="covered" data-hits="1" data-linenumber="3">
           <span class="hits">1</span>
           
-          <code class="ruby">  validates :name, presence: true</code>
+          <code class="ruby">  validates :status, presence: true, on: :edit</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="4">
           <span class="hits">1</span>
           
-          <code class="ruby">  validates :email, presence: true</code>
+          <code class="ruby">  validates :name, presence: true, on: :update</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="5">
           <span class="hits">1</span>
           
-          <code class="ruby">  validates :address, presence: true</code>
+          <code class="ruby">  validates :email, presence: true, on: :update</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="6">
           <span class="hits">1</span>
           
-          <code class="ruby">  validates :cc_name, presence: true</code>
+          <code class="ruby">  validates :address, presence: true, on: :update</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="7">
           <span class="hits">1</span>
           
-          <code class="ruby">  validates :cc_number, presence: true</code>
+          <code class="ruby">  validates :cc_name, presence: true, on: :update</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="8">
           <span class="hits">1</span>
           
-          <code class="ruby">  validates :cc_expiration, presence: true</code>
+          <code class="ruby">  validates :cc_number, presence: true, on: :update</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="9">
           <span class="hits">1</span>
           
-          <code class="ruby">  validates :cc_cvv, presence: true</code>
+          <code class="ruby">  validates :cc_expiration, presence: true, on: :update</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="10">
           <span class="hits">1</span>
           
-          <code class="ruby">  validates :zip_code, presence: true</code>
+          <code class="ruby">  validates :cc_cvv, presence: true, on: :update</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="11">
+        <li class="covered" data-hits="1" data-linenumber="11">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">  validates :zip_code, presence: true, on: :update</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="12">
@@ -1378,40 +1378,40 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="13">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="13">
           
-          <code class="ruby">  def show_products(id)</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="14">
           <span class="hits">1</span>
           
-          <code class="ruby">    order = Order.find(id)</code>
+          <code class="ruby">  def show_products(id)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="15">
           <span class="hits">1</span>
           
-          <code class="ruby">    @order_products = OrderProduct.where(order_id: id)</code>
+          <code class="ruby">    order = Order.find(id)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="16">
           <span class="hits">1</span>
           
-          <code class="ruby">    @product_names = @order_products.map{|item| Product.find_by(id: item.product_id)}</code>
+          <code class="ruby">    @order_products = OrderProduct.where(order_id: id)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="17">
+        <li class="covered" data-hits="1" data-linenumber="17">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">    @product_names = @order_products.map{|item| Product.find_by(id: item.product_id)}</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="18">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="19">
@@ -1426,76 +1426,76 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="21">
+        <li class="never" data-hits="" data-linenumber="21">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="22">
           <span class="hits">1</span>
           
           <code class="ruby">  def subtract_inventory</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="22">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
         <li class="never" data-hits="" data-linenumber="23">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="24">
           
           
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="25">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="25">
+        <li class="covered" data-hits="1" data-linenumber="26">
           <span class="hits">1</span>
           
           <code class="ruby">  def subtotal</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="26">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
         <li class="never" data-hits="" data-linenumber="27">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="28">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="29">
           
           
-          <code class="ruby">  #destroying the cart - will this be tied to order products?</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="30">
           
           
-          <code class="ruby">  #order products will have to be destroyed (I think) but it will know</code>
+          <code class="ruby">  #destroying the cart - will this be tied to order products?</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="31">
           
           
-          <code class="ruby">  #by the status being updated? or this is probably in the session logic</code>
+          <code class="ruby">  #order products will have to be destroyed (I think) but it will know</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="32">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  #by the status being updated? or this is probably in the session logic</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="33">
@@ -1511,6 +1511,12 @@
         </li>
       
         <li class="never" data-hits="" data-linenumber="35">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="36">
           
           
           <code class="ruby">end</code>
