@@ -5,7 +5,6 @@ one:
   description: little green men
   quantity: 3
   price: 1.5
-  category: doll
   merchant: :one
   id: 1
 
@@ -14,7 +13,6 @@ aliens_two:
   description: little green men
   quantity: 3
   price: 1.5
-  category: doll
   merchant: :start_1
 
 two:
@@ -22,7 +20,6 @@ two:
   description: she's a tour guide, she's a barbie
   quantity: 100
   price: 10.5
-  category: doll
   merchant: :start_1
 
 three:
@@ -30,7 +27,6 @@ three:
   description:
   quantity:
   price:
-  category:
   merchant: :start_2
 
 four:
@@ -38,7 +34,6 @@ four:
   description: she's a tour guide, she's a barbie
   quantity: 100
   price: 10.5
-  category: doll
   merchant: :start_2
 
 no_quantity:
@@ -46,7 +41,6 @@ no_quantity:
   description: she's a tour guide, she's a barbie
   quantity:
   price: 10.5
-  category: doll
   merchant: :start_1
 
 odd_quantity:
@@ -54,7 +48,6 @@ odd_quantity:
   description: she's a tour guide, she's a barbie
   quantity: sdjlf
   price: 10.5
-  category: doll
   merchant: :start_2
 
 no_price:
@@ -62,7 +55,6 @@ no_price:
   description: she's a tour guide, she's a barbie
   quantity: 5
   price:
-  category: doll
   merchant: :start_1
 
 bad_price:
@@ -70,7 +62,6 @@ bad_price:
   description: she's a tour guide, she's a barbie
   quantity: 5
   price: bdshkvbfj
-  category: doll
   merchant: :start_2
 
 
@@ -79,7 +70,6 @@ mean_price:
   description: she's a tour guide, she's a barbie
   quantity: 5
   price: -5
-  category: doll
   merchant: :start_1
 
 no_category:
@@ -87,5 +77,4 @@ no_category:
   description: she's a tour guide, she's a barbie
   quantity: 5
   price: -5
-  category:
   merchant: :start_1

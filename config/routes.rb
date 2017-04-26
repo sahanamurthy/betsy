@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-#
-# get '/orders/new', to: "orders#new", as: 'new_order'
-# get '/orders', to: "orders#index", as: 'orders'
-# get '/orders/:id', to: "orders#show", as: 'order'
+  #
+  # get '/orders/new', to: "orders#new", as: 'new_order'
+  # get '/orders', to: "orders#index", as: 'orders'
+  # get '/orders/:id', to: "orders#show", as: 'order'
   root "merchants#index"
   get '/login', to: 'sessions#login', as: 'login'
   post '/login', to: 'sessions#login'
@@ -39,12 +39,20 @@ Rails.application.routes.draw do
   # patch '/merchants/:id', to: "merchants#update"
   #
   # get '/merchants/:id', to: "merchants#show", as: 'merchant'
+  resources :categories do
+    get 'products', to:'products#index'
 
+  end
   resources :merchants
   resources :reviews
 
 
-  resources :order_products, except: :new
+  # resources :order_products, except: :new
 
+  get '/order_products', to: "order_products#index", as: "order_products"
   get '/products/:product_id/order_products/new', to: "order_products#new", as: "new_order_product"
+  post '/order_products', to: "order_products#create"
+  # patch '/order_products/:id', to: "order_products#update", as: "update_order_product"
+
+  resources :order_products, except: [:index, :new, :create]
 end

@@ -1,7 +1,7 @@
 <section>
   <%= form_for @product do |f| %>
 <!-- Temporarily hard coded all added items as belonging to merchant 1 -->
-  
+
 
     <%= f.label :name %>
     <%= f.text_field :name %>
@@ -13,7 +13,7 @@
     <%= f.text_field :price %>
 
     <%= f.label :category %>
-    <%= f.text_area :category %>
+    <%= f.select :category_ids, options_for_select(Category.all.collect { | category | [category.name, category.id] }), { :prompt => "Please select"}, { :multiple => true} %>
 
     <%= f.label :quantity %>
       <%= f.text_area :quantity %>
@@ -22,5 +22,7 @@
     <%= f.text_area :img_url %>
 
     <%= f.submit class: "button" %>
+
   <% end %>
+
 </section>
