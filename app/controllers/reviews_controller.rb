@@ -11,7 +11,7 @@ class ReviewsController < ApplicationController
   def create
     @review = Review.create(review_params)
     if @review.save
-      redirect_to reviews_path
+      redirect_to product_reviews_path
     else
       render :new, status: :bad_request
       flash[:review_not_saved] = "Unable to save review"
@@ -39,7 +39,7 @@ class ReviewsController < ApplicationController
     else
       @review.update_attributes(review_params)
       if @review.save
-        redirect_to review_path(@review)
+        redirect_to product_review_path(@review)
         flash[:messages] = "Review # #{@review.id} has been updated"
       else
         render :edit, status: :bad_request
@@ -53,7 +53,7 @@ class ReviewsController < ApplicationController
       head :not_found
     else
       @review.destroy
-      redirect_to reviews_path
+      redirect_to product_reviews_path
     end
   end
 

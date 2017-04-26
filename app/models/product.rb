@@ -21,8 +21,8 @@ after_initialize :defaults
   end
 
   def add_category(id)
-
       self.categories << Category.find(id)
-  
   end
+
+
 end

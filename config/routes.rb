@@ -43,7 +43,9 @@ Rails.application.routes.draw do
 
   end
   resources :merchants
-  resources :reviews
+  resources :products do
+    resources :reviews
+  end
 
 
   # resources :order_products, except: :new
