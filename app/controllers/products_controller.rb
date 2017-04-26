@@ -55,6 +55,13 @@ class ProductsController < ApplicationController
       end
   end
 
+  def review
+  @product = Product.find_by(id: params[:id])
+
+  @product_review = Review.new(review_params)
+  @product_review.product_id = params[:id]
+  @product_review.save!
+  end
 
   def destroy
     @product = Product.find_by(id: params[:id])
@@ -65,5 +72,10 @@ class ProductsController < ApplicationController
   private
   def product_params
     return params.require(:product).permit(:name, :quantity, :category, :price, :description, :merchant_id)
+  end
+
+  def review_params
+    return params.require(:review).permit(:name, :product_id, :comment, :rating, :merchant_id)
+
   end
 end
