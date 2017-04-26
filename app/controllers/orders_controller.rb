@@ -39,13 +39,16 @@ class OrdersController < ApplicationController
   def update
     @order = Order.find_by(id: params[:id])
     @order.update_attributes(order_params)
+    @order.status = "paid"
     @order.save
 
       if @order.save
         # @order.status = "paid"
-        redirect_to order_path(params[:id])
+        redirect_to order_summary_path(@order)
       else
         render :edit, status: :bad_request
+        flash[:order_not_saved] = "unable to save order"
+
       end
   end
 

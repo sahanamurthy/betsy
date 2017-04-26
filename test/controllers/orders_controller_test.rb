@@ -22,6 +22,11 @@ describe OrdersController do
       get new_order_path
       must_respond_with :success
     end
+
+    it "sets the status to 'pending'" do
+      #TODO
+    end
+
   end
 
   describe "create" do
@@ -53,7 +58,8 @@ describe OrdersController do
       order_data = {order: {name: "changed name"}}
       patch order_path(order.id), params: order_data
 
-      must_redirect_to order_path(order.id)
+      # must_redirect_to order_path(order.id)
+      must_redirect_to order_summary_path(order.id)
     end
 
     it "responds with a bad request for bad data" do

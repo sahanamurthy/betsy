@@ -1,13 +1,14 @@
 class Order < ApplicationRecord
   has_many :order_products
-  validates :name, presence: true
-  validates :email, presence: true
-  validates :address, presence: true
-  validates :cc_name, presence: true
-  validates :cc_number, presence: true
-  validates :cc_expiration, presence: true
-  validates :cc_cvv, presence: true
-  validates :zip_code, presence: true
+  validates :status, presence: true, on: :edit
+  validates :name, presence: true, on: :update
+  validates :email, presence: true, on: :update
+  validates :address, presence: true, on: :update
+  validates :cc_name, presence: true, on: :update
+  validates :cc_number, presence: true, on: :update
+  validates :cc_expiration, presence: true, on: :update
+  validates :cc_cvv, presence: true, on: :update
+  validates :zip_code, presence: true, on: :update
 
 
   def show_products(id)
