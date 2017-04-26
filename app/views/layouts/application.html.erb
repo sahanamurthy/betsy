@@ -1,73 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title><%= content_for?(:title) ? yield(:title) : "Betsy" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "Betsy" %></title>
 
-  <%= stylesheet_link_tag    "application" %>
-  <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
 
-<body>
-  <header class = "head">
+  <body>
+    <header class = "head">
 
-    <div class="row">
+      <div class="row">
 
 
-      <div class="columns large-3 small-12">
+        <div class="columns large-3 medium-2 small-12">
+          <%= image_tag 'https://raw.githubusercontent.com/sahanamurthy/betsy/header_2/public/treasure_chest.png', class:"cart", id: "cart" %>
+
+        </div>
+
+
+      <div class="columns large-3 medium-5 small-12">
+
         <section class = "woody">
           <%=image_tag 'https://raw.githubusercontent.com/sahanamurthy/betsy/master/app/assets/images/woody_logo_flattened_alpha.png'%>
         </section>
       </div>
 
-
-    <div class="columns large-6 small-12">
-      <section class = "menu">
-        <%= link_to 'Sign Up'%>
-        <%= link_to 'More Links'%>
-        <%= link_to 'More Links'%>
-        <%= link_to 'More Links'%>
-        <%= link_to 'More Links'%>
-
-        <%= image_tag 'https://raw.githubusercontent.com/sahanamurthy/betsy/header_2/public/treasure_chest.png', class:"cart", id: "cart" %>
-      </section>
     </div>
+  </header>
+  <section class = "row">
 
-    <div class="columns large-3 small-12">
+  <section class="flash">
+    <%= flash[:status] %>
+    <% if flash[:result_text] or flash[:message] %>
+    <h3>
+      <%= flash[:status] == :failure ? "A problem occurred: " : "" %> <%= flash[:result_text] %>
+    </h3>
+    <% end %>
+
+    <% if flash[:messages] %>
+    <% flash.each do |name, problems| %>
+    <em> <%= "#{problems}" %></em> <br>
+    <% end %>
+    <% end %>
+    </section>
+
+    <aside class = "columns large-2 medium-2 small-12">
+
       <section class="user-info">
+
         <% if @current_merchant %>
         <p class="text-right">Logged in as <%= link_to @current_merchant.username, merchant_path(@current_merchant) %></p>
-        <%= link_to "Log Out", logout_path, method: :post, class: "button float-right" %>
+        <%= link_to "Log Out", logout_path, method: :post, class: "button" %>
         <% else %>
         <p class="text-right">Not logged in</p>
-        <%= link_to "Log In", "/auth/github", class: "button float-right" %>
+        <%= link_to "Log In", "/auth/github", class: "button " %>
         <% end %>
+
       </section>
-    </div>
 
-  </div>
-</header>
+      <section class = "sidebar">
+        <%= link_to 'Sign Up',login_path ,class:'button'%>
+        <%= link_to 'More Links',products_path ,class:"but-sidebar"%>
+        <%= link_to 'More Links' ,products_path, class:"but-sidebar"%>
+        <%= link_to 'More Links' ,products_path, class:"but-sidebar"%>
+        <%= link_to 'More Links' ,products_path, class:"but-sidebar"%>
+        <%= link_to 'More Links' ,products_path, class:"but-sidebar"%>
 
-<section class="flash">
-  <%= flash[:status] %>
-  <% if flash[:result_text] or flash[:message] %>
-  <h3>
-    <%= flash[:status] == :failure ? "A problem occurred: " : "" %> <%= flash[:result_text] %>
-  </h3>
-  <% end %>
 
-  <% if flash[:messages] %>
-  <% flash.each do |name, problems| %>
-  <em> <%= "#{problems}" %></em> <br>
-  <% end %>
-  <% end %>
-
-</section>
-
-<%= yield %>
-
-</body>
+    </section>
+    </aside>
+    <section class = "columns large-10 medium-5 small-12">
+    <%= yield %>
+  </section>
+  </body>
 </html>
