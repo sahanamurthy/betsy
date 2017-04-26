@@ -15,10 +15,11 @@ class SessionsController < ApplicationController
         flash[:field] = problem.join(", ")
         end
       end
+
     else
       session[:merchant_id] = merchant.id
       flash[:message] = "Successfully logged in as a returning user #{merchant.username}"
-    end 
+    end
     redirect_to root_path
   end
 
@@ -27,4 +28,7 @@ class SessionsController < ApplicationController
    flash[:result_text] = "Successfully logged out"
    redirect_to root_path
  end
+
+
+
 end

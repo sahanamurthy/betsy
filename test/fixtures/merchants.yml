@@ -21,3 +21,15 @@ start_2:
   name: Boomer
   username: Babyboomer_2
   email: an@email.com
+
+ada:
+  oauth_provider: github
+  oauth_uid: 12345
+  email: ada@adadevelopersacademy.org
+  username: countess_ada
+
+grace:
+  oauth_provider: github
+  oauth_uid: 13371337
+  email: grace@hooper.net
+  username: graceful_hoops
