@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   get 'products/:id/edit', to:'products#edit', as: 'edit_product'
   patch '/products/:id', to:'products#update'
   delete '/products/:id', to:'products#destroy'
-
+  get '/products/product_by_merchant/:id', to:'products#product_by_merchant', as: 'product_by_merchant'
 
   get '/orders', to: "orders#index", as: 'orders'
   get '/orders/new', to: "orders#new", as: 'new_order'
