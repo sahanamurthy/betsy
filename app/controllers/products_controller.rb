@@ -57,9 +57,10 @@ class ProductsController < ApplicationController
 
   def review
   @product = Product.find_by(id: params[:id])
-  @review = Review.new(review_params)
-  @review.product_id = params[:id]
-  @review.save!
+
+  @product_review = Review.new(review_params)
+  @product_review.product_id = params[:id]
+  @product_review.save!
   end
 
   def destroy

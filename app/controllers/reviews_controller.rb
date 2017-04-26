@@ -1,46 +1,48 @@
 class ReviewsController < ApplicationController
 
   def index
-    @reviews = Review.all
+    @product_reviews = Review.all
   end
 
   def new
-    @review = Review.new
+    @product_review = Review.new
+
   end
 
   def create
-    @review = Review.create(review_params)
-    if @review.save
-      redirect_to product_reviews_path
+    @product_review = Review.create(review_params)
+    if @product_review.save
+      redirect_to product_path(@product_review.product_id)
     else
       render :new, status: :bad_request
       flash[:review_not_saved] = "Unable to save review"
     end
+
   end
 
   def show
-    @review = Review.find_by(id: params[:id])
+    @product_review = Review.find_by(id: params[:id])
     if @review.nil?
       head :not_found
     end
   end
 
   def edit
-    @review = Review.find_by(id: params[:id])
-    if @review.nil?
+    @product_review = Review.find_by(id: params[:id])
+    if @product_review.nil?
       head :not_found
     end
   end
 
   def update
-    @review = Review.find_by(id: params[:id])
-    if @review.nil?
+    @product_review = Review.find_by(id: params[:id])
+    if @product_review.nil?
       head :not_found
     else
-      @review.update_attributes(review_params)
-      if @review.save
-        redirect_to product_review_path(@review)
-        flash[:messages] = "Review # #{@review.id} has been updated"
+      @product_review.update_attributes(review_params)
+      if @product_review.save
+        redirect_to products_path(@product_review.product_id)
+        flash[:messages] = "Review # #{@product_review.id} has been updated"
       else
         render :edit, status: :bad_request
       end
@@ -48,11 +50,11 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
-    @review = Review.find_by(id: params[:id])
-    if @review.nil?
+    @product_review = Review.find_by(id: params[:id])
+    if @product_review.nil?
       head :not_found
     else
-      @review.destroy
+      @product_review.destroy
       redirect_to product_reviews_path
     end
   end

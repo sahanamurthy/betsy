@@ -1,5 +1,5 @@
 <section>
-  <%= form_for @review do |f| %>
+  <%= form_for @product_review, url:product_reviews_path do |f| %>
 
     <%= f.label :rating %>
     <%= f.select :rating, [1, 2, 3, 4, 5]%>
