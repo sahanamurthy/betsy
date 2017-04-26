@@ -25,8 +25,15 @@
 body {
   /*background: url('main.jpeg');*/
   background-image: url(<%= asset_path 'ts2.jpg' %>);
-  background-size: cover;
+  /*background-size: cover;*/
+  background-attachment: fixed;
+   background-repeat: no-repeat;
+   background-size: cover;
+   -moz-background-size: cover;
+
 }
+
+body li{list-style: none;}
 
 .woody{width:350px;
   z-index:-1;
