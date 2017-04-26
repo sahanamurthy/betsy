@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
         session[:merchant_id] = merchant.id
         flash[:message] = "Successfully logged in as merchant #{merchant.username}"
       else
-        flash[:message] = "Could not log in"
+        flash[:message] = "Could not login"
         merchant.errors.messages.each do |field, problem|
         flash[:field] = problem.join(", ")
         end

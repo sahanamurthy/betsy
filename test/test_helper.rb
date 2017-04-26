@@ -36,6 +36,11 @@ class ActiveSupport::TestCase
     OmniAuth.config.test_mode = true
   end
 
+  def login(merchant)
+      OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new(mock_auth_hash(merchant))
+      get auth_callback_path(:github)
+  end
+
   def mock_auth_hash(merchant)
     return{
       provider: merchant.oauth_provider,
