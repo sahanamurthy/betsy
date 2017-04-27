@@ -17,10 +17,22 @@ class Order < ApplicationRecord
     @product_names = @order_products.map{|item| Product.find_by(id: item.product_id)}
   end
 
+  def close_session_cart
+    # if session.id == order_id &&
+  end
 
-
-  def subtract_inventory
-
+  def subtract_inventory(id)
+    #after update
+    product_quantity = {}
+    products = Order.find(id).order_products
+    products.each do |product|
+      product_quantity[product.id] = product.quantity
+    end
+    product_quantity.each do |product_id, product_quantity|
+      if Product.find(product_id).quantity - product_quantity >= 0
+        Product.find(product.product_id).quantity -= product_quantity
+      end
+    end
   end
 
   def subtotal

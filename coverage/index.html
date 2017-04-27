@@ -14,27 +14,27 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2017-04-26T11:07:05-07:00">2017-04-26T11:07:05-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2017-04-26T15:20:08-07:00">2017-04-26T15:20:08-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">92.6%</span></span>
+    (<span class="covered_percent"><span class="green">94.86%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.34
+         1.36
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>35</b> files in total.
-    <b>811</b> relevant lines. 
-    <span class="green"><b>751</b> lines covered</span> and
-    <span class="red"><b>60</b> lines missed </span>
+    <b>836</b> relevant lines. 
+    <span class="green"><b>793</b> lines covered</span> and
+    <span class="red"><b>43</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -57,7 +57,7 @@
         <td>14</td>
         <td>8</td>
         <td>6</td>
-        <td>6.2</td>
+        <td>6.4</td>
       </tr>
       
       <tr>
@@ -122,12 +122,12 @@
       
       <tr>
         <td class="strong"><a href="#d4aa754b5f74481b1caa7c2b5edd0a1e28f4551a" class="src_link" title="app/controllers/sessions_controller.rb">app/controllers/sessions_controller.rb</a></td>
-        <td class="red strong">15.79 %</td>
-        <td>30</td>
+        <td class="red strong">68.42 %</td>
+        <td>34</td>
         <td>19</td>
-        <td>3</td>
-        <td>16</td>
-        <td>0.2</td>
+        <td>13</td>
+        <td>6</td>
+        <td>0.9</td>
       </tr>
       
       <tr>
@@ -232,18 +232,18 @@
       
       <tr>
         <td class="strong"><a href="#e5e0aaa097be8c0a74a94aa18e43f2de17974ac8" class="src_link" title="app/models/merchant.rb">app/models/merchant.rb</a></td>
-        <td class="red strong">41.67 %</td>
+        <td class="green strong">100.0 %</td>
         <td>15</td>
         <td>12</td>
-        <td>5</td>
-        <td>7</td>
-        <td>0.8</td>
+        <td>12</td>
+        <td>0</td>
+        <td>1.4</td>
       </tr>
       
       <tr>
         <td class="strong"><a href="#008a509084574f5b1efc62d74eade1560d7427c9" class="src_link" title="app/models/order.rb">app/models/order.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>36</td>
+        <td>55</td>
         <td>17</td>
         <td>17</td>
         <td>0</td>
@@ -283,7 +283,7 @@
       <tr>
         <td class="strong"><a href="#80a62516660b9d301e652d80ea9dcfd72485cf24" class="src_link" title="test/controllers/merchants_controller_test.rb">test/controllers/merchants_controller_test.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>139</td>
+        <td>140</td>
         <td>78</td>
         <td>78</td>
         <td>0</td>
@@ -333,9 +333,9 @@
       <tr>
         <td class="strong"><a href="#a8698412b8464b2d8431a0a15d4380479a98cd9f" class="src_link" title="test/controllers/sessions_controller_test.rb">test/controllers/sessions_controller_test.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>7</td>
-        <td>2</td>
-        <td>2</td>
+        <td>40</td>
+        <td>20</td>
+        <td>20</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -373,9 +373,9 @@
       <tr>
         <td class="strong"><a href="#9138e8e6a274c026f47b79a529102241ee8f9bcb" class="src_link" title="test/models/order_test.rb">test/models/order_test.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>70</td>
-        <td>43</td>
-        <td>43</td>
+        <td>90</td>
+        <td>50</td>
+        <td>50</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -496,8 +496,8 @@
           <code class="ruby">  def lookup_merchant</code>
         </li>
       
-        <li class="covered" data-hits="73" data-linenumber="12">
-          <span class="hits">73</span>
+        <li class="covered" data-hits="75" data-linenumber="12">
+          <span class="hits">75</span>
           
           <code class="ruby">    unless session[:merchant_id].nil?</code>
         </li>
@@ -2197,7 +2197,7 @@
         <li class="missed" data-hits="0" data-linenumber="22">
           
           
-          <code class="ruby">    params[:product][:category_ids].each{|id| @product.add_category(id)}</code>
+          <code class="ruby">    params[:product][:category_ids][1...-1].each{|id| @product.add_category(id)}</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="23">
@@ -2891,11 +2891,11 @@
         <div class="source_table" id="d4aa754b5f74481b1caa7c2b5edd0a1e28f4551a">
   <div class="header">
     <h3>app/controllers/sessions_controller.rb</h3>
-    <h4><span class="red">15.79 %</span> covered</h4>
+    <h4><span class="red">68.42 %</span> covered</h4>
     <div>
       <b>19</b> relevant lines. 
-      <span class="green"><b>3</b> lines covered</span> and
-      <span class="red"><b>16</b> lines missed.</span>
+      <span class="green"><b>13</b> lines covered</span> and
+      <span class="red"><b>6</b> lines missed.</span>
     </div>
   </div>
   
@@ -2914,8 +2914,8 @@
           <code class="ruby">  def auth_callback</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="3">
-          
+        <li class="covered" data-hits="2" data-linenumber="3">
+          <span class="hits">2</span>
           
           <code class="ruby">    auth_hash = request.env[&#39;omniauth.auth&#39;]</code>
         </li>
@@ -2926,8 +2926,8 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="5">
-          
+        <li class="covered" data-hits="2" data-linenumber="5">
+          <span class="hits">2</span>
           
           <code class="ruby">    merchant = Merchant.find_by(oauth_provider: params[:provider], oauth_uid: auth_hash[&quot;uid&quot;])</code>
         </li>
@@ -2938,32 +2938,32 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="7">
-          
+        <li class="covered" data-hits="2" data-linenumber="7">
+          <span class="hits">2</span>
           
           <code class="ruby">    if merchant.nil?</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="8">
-          
+        <li class="covered" data-hits="1" data-linenumber="8">
+          <span class="hits">1</span>
           
           <code class="ruby">      merchant = Merchant.from_github(auth_hash)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="9">
-          
+        <li class="covered" data-hits="1" data-linenumber="9">
+          <span class="hits">1</span>
           
           <code class="ruby">      if merchant.save</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="10">
-          
+        <li class="covered" data-hits="1" data-linenumber="10">
+          <span class="hits">1</span>
           
           <code class="ruby">        session[:merchant_id] = merchant.id</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="11">
-          
+        <li class="covered" data-hits="1" data-linenumber="11">
+          <span class="hits">1</span>
           
           <code class="ruby">        flash[:message] = &quot;Successfully logged in as merchant #{merchant.username}&quot;</code>
         </li>
@@ -3007,76 +3007,100 @@
         <li class="never" data-hits="" data-linenumber="18">
           
           
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="19">
+          
+          
           <code class="ruby">    else</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="19">
-          
+        <li class="covered" data-hits="1" data-linenumber="20">
+          <span class="hits">1</span>
           
           <code class="ruby">      session[:merchant_id] = merchant.id</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="20">
-          
+        <li class="covered" data-hits="1" data-linenumber="21">
+          <span class="hits">1</span>
           
           <code class="ruby">      flash[:message] = &quot;Successfully logged in as a returning user #{merchant.username}&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="21">
+        <li class="never" data-hits="" data-linenumber="22">
           
           
-          <code class="ruby">    end </code>
+          <code class="ruby">    end</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="22">
-          
+        <li class="covered" data-hits="2" data-linenumber="23">
+          <span class="hits">2</span>
           
           <code class="ruby">    redirect_to root_path</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="23">
-          
-          
-          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="24">
           
           
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="25">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="25">
+        <li class="covered" data-hits="1" data-linenumber="26">
           <span class="hits">1</span>
           
           <code class="ruby">  def logout</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="26">
+        <li class="missed" data-hits="0" data-linenumber="27">
           
           
           <code class="ruby">   session[:merchant_id] = nil</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="27">
+        <li class="missed" data-hits="0" data-linenumber="28">
           
           
           <code class="ruby">   flash[:result_text] = &quot;Successfully logged out&quot;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="28">
+        <li class="missed" data-hits="0" data-linenumber="29">
           
           
           <code class="ruby">   redirect_to root_path</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="29">
+        <li class="never" data-hits="" data-linenumber="30">
           
           
           <code class="ruby"> end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="30">
+        <li class="never" data-hits="" data-linenumber="31">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="32">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="33">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="34">
           
           
           <code class="ruby">end</code>
@@ -3413,11 +3437,11 @@
         <div class="source_table" id="e5e0aaa097be8c0a74a94aa18e43f2de17974ac8">
   <div class="header">
     <h3>app/models/merchant.rb</h3>
-    <h4><span class="red">41.67 %</span> covered</h4>
+    <h4><span class="green">100.0 %</span> covered</h4>
     <div>
       <b>12</b> relevant lines. 
-      <span class="green"><b>5</b> lines covered</span> and
-      <span class="red"><b>7</b> lines missed.</span>
+      <span class="green"><b>12</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
   
@@ -3460,44 +3484,44 @@
           <code class="ruby">  def self.from_github(auth_hash)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="7">
-          
+        <li class="covered" data-hits="1" data-linenumber="7">
+          <span class="hits">1</span>
           
           <code class="ruby">    merchant = Merchant.new</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="8">
-          
+        <li class="covered" data-hits="1" data-linenumber="8">
+          <span class="hits">1</span>
           
           <code class="ruby">    merchant.username = auth_hash[&quot;info&quot;][&quot;nickname&quot;]</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="9">
-          
+        <li class="covered" data-hits="1" data-linenumber="9">
+          <span class="hits">1</span>
           
           <code class="ruby">    merchant.name = auth_hash[&quot;info&quot;][&quot;name&quot;]</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="10">
-          
+        <li class="covered" data-hits="1" data-linenumber="10">
+          <span class="hits">1</span>
           
           <code class="ruby">    merchant.email = auth_hash[&quot;info&quot;][&quot;email&quot;]</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="11">
-          
+        <li class="covered" data-hits="1" data-linenumber="11">
+          <span class="hits">1</span>
           
           <code class="ruby">    merchant.oauth_uid = auth_hash[&quot;uid&quot;]</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="12">
-          
+        <li class="covered" data-hits="1" data-linenumber="12">
+          <span class="hits">1</span>
           
           <code class="ruby">    merchant.oauth_provider = &quot;github&quot;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="13">
-          
+        <li class="covered" data-hits="1" data-linenumber="13">
+          <span class="hits">1</span>
           
           <code class="ruby">    return merchant</code>
         </li>
@@ -3646,22 +3670,22 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="20">
+        <li class="covered" data-hits="2" data-linenumber="20">
+          <span class="hits">2</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">  def close_session_cart</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="21">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">    # if session.id == order_id &amp;&amp;</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="22">
-          <span class="hits">2</span>
+        <li class="never" data-hits="" data-linenumber="22">
           
-          <code class="ruby">  def subtract_inventory</code>
+          
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="23">
@@ -3673,76 +3697,190 @@
         <li class="never" data-hits="" data-linenumber="24">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">  # def subtract_inventory(quantity)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="25">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  #</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="26">
-          <span class="hits">2</span>
+        <li class="never" data-hits="" data-linenumber="26">
           
-          <code class="ruby">  def subtotal</code>
+          
+          <code class="ruby">  #</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="27">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  #   order = Order.find(id)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="28">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">  #   @order_products = OrderProduct.where(order_id: id)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="29">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  #   @product_quantity = @order_products.map{|item| Product.find_by (id: item.product_id)}</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="30">
           
           
-          <code class="ruby">  #destroying the cart - will this be tied to order products?</code>
+          <code class="ruby">  #</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="31">
           
           
-          <code class="ruby">  #order products will have to be destroyed (I think) but it will know</code>
+          <code class="ruby">  #   order.orderproducts.</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="32">
           
           
-          <code class="ruby">  #by the status being updated? or this is probably in the session logic</code>
+          <code class="ruby">  #</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="33">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  #</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="34">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  #</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="35">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  #   go through each order_product in the order</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="36">
+          
+          
+          <code class="ruby">  #</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="37">
+          
+          
+          <code class="ruby">  #   if order product id == product id</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="38">
+          
+          
+          <code class="ruby">  #     product.quantity - 1</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="39">
+          
+          
+          <code class="ruby">  #   find the product id that == the order product id</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="40">
+          
+          
+          <code class="ruby">  #   subtract 1 from the prooduct quanity</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="41">
+          
+          
+          <code class="ruby">  #</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="42">
+          
+          
+          <code class="ruby">  #</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="43">
+          
+          
+          <code class="ruby">  # end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="44">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="45">
+          <span class="hits">2</span>
+          
+          <code class="ruby">  def subtotal</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="46">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="47">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="48">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="49">
+          
+          
+          <code class="ruby">  #destroying the cart - will this be tied to order products?</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="50">
+          
+          
+          <code class="ruby">  #order products will have to be destroyed (I think) but it will know</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="51">
+          
+          
+          <code class="ruby">  #by the status being updated? or this is probably in the session logic</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="52">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="53">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="54">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="55">
           
           
           <code class="ruby">end</code>
@@ -4879,6 +5017,12 @@
         <li class="never" data-hits="" data-linenumber="139">
           
           
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="140">
+          
+          
           <code class="ruby">end</code>
         </li>
       
@@ -5317,7 +5461,7 @@
         <li class="covered" data-hits="1" data-linenumber="1">
           <span class="hits">1</span>
           
-          <code class="ruby">require &quot;test_helper&quot;</code>
+          <code class="ruby"> require &quot;test_helper&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="2">
@@ -7561,8 +7705,8 @@
     <h3>test/controllers/sessions_controller_test.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>2</b> relevant lines. 
-      <span class="green"><b>2</b> lines covered</span> and
+      <b>20</b> relevant lines. 
+      <span class="green"><b>20</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -7591,22 +7735,220 @@
         <li class="never" data-hits="" data-linenumber="4">
           
           
-          <code class="ruby">  # it &quot;must be a real test&quot; do</code>
+          <code class="ruby">  #sessions testing</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="5">
           
           
-          <code class="ruby">  #   flunk &quot;Need real tests&quot;</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="6">
+        <li class="covered" data-hits="1" data-linenumber="6">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  # end</code>
+          <code class="ruby">  describe &quot;auth_callback&quot; do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="7">
+        <li class="covered" data-hits="1" data-linenumber="7">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it&quot;registers a new user&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="8">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      start_count = Merchant.count</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="9">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      merchant = Merchant.new(username:&quot;test user&quot;, email:&quot;test@user.net&quot;, oauth_provider: &quot;github&quot;, oauth_uid:9999999)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="10">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="11">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new(mock_auth_hash(merchant))</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="12">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      get auth_callback_path(:github)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="13">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      must_redirect_to root_path</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="14">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="15">
+          
+          
+          <code class="ruby">      #This string will only show up if the test fails becasuse the merchant_id passed was not recieved</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="16">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      session[:merchant_id].must_equal Merchant.last.id, &quot;Could not log in&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="17">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="18">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      Merchant.count.must_equal start_count + 1</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="19">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="20">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="21">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="22">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &quot;accepts a returning user&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="23">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      start_count = Merchant.count</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="24">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      merchant = merchants(:grace)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="25">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new(mock_auth_hash(merchant))</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="26">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      get auth_callback_path(:github)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="27">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      must_redirect_to root_path</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="28">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="29">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      session[:merchant_id].must_equal merchant.id, &quot;Merchant was not logged in&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="30">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="31">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      Merchant.count.must_equal start_count</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="32">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="33">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="34">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="35">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="36">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &quot;rejects incomplete auth data&quot; do</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="37">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="38">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="39">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="40">
           
           
           <code class="ruby">end</code>
@@ -8263,8 +8605,8 @@
     <h3>test/models/order_test.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>43</b> relevant lines. 
-      <span class="green"><b>43</b> lines covered</span> and
+      <b>50</b> relevant lines. 
+      <span class="green"><b>50</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -8587,7 +8929,7 @@
         <li class="covered" data-hits="1" data-linenumber="53">
           <span class="hits">1</span>
           
-          <code class="ruby">    it &quot;requires a zip_code&quot; do </code>
+          <code class="ruby">    it &quot;requires a zip_code&quot; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="54">
@@ -8671,22 +9013,142 @@
         <li class="never" data-hits="" data-linenumber="67">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="68">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="69">
+        <li class="covered" data-hits="1" data-linenumber="69">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  describe &quot;subtract_inventory&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="70">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &quot;subtracts the quanity of product in order from product quantity&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="71">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      order = Order.new</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="72">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      order = { order: { name: &quot;Benjamin Franklin&quot;, status: &quot;paid&quot;, email: &quot;bennyfranklin@gmail.com&quot;, address: &quot;990 fremont&quot;, cc_name: &quot;Benjamin Franklin&quot;, cc_number: 102999203, cc_expiration: &quot;1772/02&quot;, cc_cvv: 802, zip_code: 99201 } }</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="73">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      order.order_products = { id: 1, product_id: 1, quantity: 1, order_id: 2 }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="74">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="70">
+        <li class="never" data-hits="" data-linenumber="75">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="76">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="77">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="78">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  describe &quot;subtotal&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="79">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &quot;sums up the total of the order products&quot; do</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="80">
+          
+          
+          <code class="ruby">      # product = Product.new</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="81">
+          
+          
+          <code class="ruby">      # order_product = Order_product.new</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="82">
+          
+          
+          <code class="ruby">      # order = Order.new</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="83">
+          
+          
+          <code class="ruby">      # ---------------------</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="84">
+          
+          
+          <code class="ruby">      # order = Order.new</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="85">
+          
+          
+          <code class="ruby">      # order = { order: { name: &quot;Benjamin Franklin&quot;, status: &quot;paid&quot;, email: &quot;bennyfranklin@gmail.com&quot;, address: &quot;990 fremont&quot;, cc_name: &quot;Benjamin Franklin&quot;, cc_number: 102999203, cc_expiration: &quot;1772/02&quot;, cc_cvv: 802, zip_code: 99201 } }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="86">
+          
+          
+          <code class="ruby">      # order.order_products = { order_products: { id: 1, product_id: 1, quantity: 1, order_id: 1 }, { id: 2, product_id: 1, quantity: 1, order_id: 1 } }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="87">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="88">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="89">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="90">
           
           
           <code class="ruby">end</code>
