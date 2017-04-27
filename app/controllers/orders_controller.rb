@@ -22,14 +22,14 @@ class OrdersController < ApplicationController
 
   def create
     @order = Order.create(order_params)
-    # if
-    @order.save
-      # @order.status = "paid"
-      # redirect_to order_summary_path(@order)
+    @order.save 
+    # if @order.save
+    #   @order.status = "paid"
+    #   redirect_to order_summary_path(@order)
     # else
     #   render :new, status: :bad_request
     #   flash[:order_not_saved] = "unable to save order"
-    # end
+    end
   end
 
   def edit
