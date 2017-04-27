@@ -31,7 +31,7 @@ Rails.application.routes.draw do
   delete 'orders/:id', to: 'orders#destroy'
   get '/orders/:id/order_summary', to: 'orders#order_summary', as: "order_summary"
 
-
+# merchants/:id/orders
   # get '/merchants', to: "merchants#index", as: 'merchants'
   # get "/merchants/new", to: "merchants#new", as: "new_merchants"
   # post "merchants", to: "merchants#create"
@@ -47,7 +47,7 @@ Rails.application.routes.draw do
   resources :products do
     resources :reviews
   end
-
+  get '/merchants/:id/orders', to: "merchants#orders", as: "merchant_orders"
 
   # resources :order_products, except: :new
 
