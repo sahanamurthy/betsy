@@ -41,7 +41,7 @@ class OrdersController < ApplicationController
     @order.update_attributes(order_params)
     @order.status = "paid"
     if @order.save
-
+      @order.close_session_cart
       redirect_to order_summary_path(@order)
     else
       render :edit, status: :bad_request
@@ -65,6 +65,10 @@ class OrdersController < ApplicationController
   private
   def order_params
     return params.require(:order).permit(:name, :status, :email, :address, :cc_name, :cc_number, :cc_expiration, :cc_cvv, :zip_code)
+  end
+
+  def close_session_cart
+    session[:order_id] = nil if self.status == "paid"
   end
 
 end

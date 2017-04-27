@@ -3,7 +3,7 @@
 one:
   product_id: 123
   quantity: 1
-  order_id: 11
+  order_id: orders(:one)
 
 two:
   product_id: 234
