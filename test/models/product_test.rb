@@ -73,8 +73,21 @@ describe Product do
 
         Merchant.find(all[0].merchant_id).must_be_instance_of Merchant
         Merchant.find(all[0].merchant_id).id.must_equal 322419810
+    end
 
+
+      it "returns an array of a single category type" do
+        a= Product.first
+        b = categories(:one)
+        a.add_category(b.id)
+       filtered_products =  Product.by_category(b.id)
+    
+
+       filtered_products[0].must_be_instance_of Product
+       filtered_products.length.must_equal Category.find(b.id).products.length
+
+      end
 
     end
-  end
+
 end

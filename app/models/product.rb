@@ -13,15 +13,25 @@ class Product < ApplicationRecord
 after_initialize :defaults
 
   def defaults
-      self.img_url = "http://loremflickr.com/320/240/puppy"  if self.img_url.nil?
+    unless self.img_url
+      self.img_url = "http://loremflickr.com/320/240/puppy"
+    end
+
   end
 
   def self.by_merchant(id)
     Product.where(merchant_id: id)
   end
 
+  def self.by_category(id)
+      Product.all.select{|product| product.categories.include?(Category.find(id)) }
+
+  end
+
+
+
   def add_category(id)
-      self.categories << Category.find(id)
+      self.categories << Category.find_by(id:id)
   end
 
 
