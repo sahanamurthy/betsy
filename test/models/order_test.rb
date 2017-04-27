@@ -68,8 +68,14 @@ describe Order do
 
   describe "subtract_inventory" do
     it "subtracts the quanity of product in order from product quantity" do
-      
-
+      #TODO finish this test ! 
+      # pdt = products(:one)
+      # order =
+      # Order.subtract_inventory(pdt.id)
+      # pdt.quantity.must_equal 2
+      a = order_products(:one)
+      b = orders(:one)
+      b.subtract_inventory(b.id)
     end
   end
 

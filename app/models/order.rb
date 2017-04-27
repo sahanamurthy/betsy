@@ -35,8 +35,22 @@ class Order < ApplicationRecord
     end
   end
 
-  def subtotal
-
+  def subtotal(id)
+    subtotal_array = []
+#returns an order object
+    order = Order.find(id)
+    #returns an array of order_products associated with The OrderObject
+    @order_products = OrderProduct.where(order_id: id)
+    # Returns an array of Products associated with each listed order product
+    @product_price = @order_products.map{|item| Product.find_by(id: item.product_id)}
+    #iterating through the array of products (called product-price)
+    @product_price.each do |price|
+        a = price.price
+        #here we are scraping the price from each product object and shoveling
+        #into the subtotal_array
+        subtotal_array << a
+      end
+    return subtotal_array.inject(:+)
   end
 
   #destroying the cart - will this be tied to order products?
