@@ -37,7 +37,7 @@ class Order < ApplicationRecord
 
   def subtotal(id)
     subtotal_array = []
-#returns an order object
+    #returns an order object
     order = Order.find(id)
     #returns an array of order_products associated with The OrderObject
     @order_products = OrderProduct.where(order_id: id)

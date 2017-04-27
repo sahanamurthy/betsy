@@ -16,8 +16,10 @@ class OrderProductsController < ApplicationController
   end
 
   def edit
-    @order_product = OrderProduct.find_by(id: params[:id])
+    @order_product = OrderProduct.find_by(order_id: params[:id])
     @order_product.order
+    # @order_product = order.order_products.find_by(id: params[:id])
+
   end
 
   def update
