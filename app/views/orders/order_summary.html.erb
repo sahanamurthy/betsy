@@ -10,8 +10,7 @@
   <%@product_names.each_with_index do |product, index|%>
   <p><%= index + 1%>.  <%= link_to product.name, products_path(product.id) %> $<%= product.price %>
   <%end%>
-  <p>Subtotal:</p>
-</p>
+  <p>Subtotal: $<%= @order.subtotal %></p>
 </tr>
 <tr>
   <td>Status: <%= @order.status %><td>

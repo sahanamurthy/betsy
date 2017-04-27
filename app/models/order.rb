@@ -35,7 +35,7 @@ class Order < ApplicationRecord
     end
   end
 
-  def subtotal(id)
+  def subtotal
     subtotal_array = []
     #returns an order object
     order = Order.find(id)
