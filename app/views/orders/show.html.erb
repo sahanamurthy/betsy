@@ -8,9 +8,8 @@
     <td rowspan = "3" >
   <p> Products:
     <%@product_names.each_with_index do |product, index|%>
-    <p><%= index + 1%>.  <%= product.name %>
+    <p><%= index + 1%>.  <%= product.name %> <%= link_to "Edit/Delete", edit_order_product_path(@order.id), class: "button" %>
     <%end%>
-    <%= link_to "Edit/Delete", edit_order_product_path(@order.id), class: "button" %>
 
   </td>
   </tr>
