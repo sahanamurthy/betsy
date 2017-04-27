@@ -39,8 +39,9 @@ class OrdersController < ApplicationController
   def update
     @order = Order.find_by(id: params[:id])
     @order.update_attributes(order_params)
+    @order.status = "paid"
     if @order.save
-      @order.status = "paid"
+
       redirect_to order_summary_path(@order)
     else
       render :edit, status: :bad_request
