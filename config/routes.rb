@@ -21,6 +21,8 @@ Rails.application.routes.draw do
   patch '/products/:id', to:'products#update'
   delete '/products/:id', to:'products#destroy'
   get '/products/product_by_merchant/:id', to:'products#product_by_merchant', as: 'product_by_merchant'
+  get '/merchants/:id/orders', to: "merchants#orders", as: "merchant_orders"
+
 
   get '/orders', to: "orders#index", as: 'orders'
   get '/orders/new', to: "orders#new", as: 'new_order'
@@ -47,8 +49,6 @@ Rails.application.routes.draw do
   resources :products do
     resources :reviews
   end
-  get '/merchants/:id/orders', to: "merchants#orders", as: "merchant_orders"
-
   # resources :order_products, except: :new
 
   get '/order_products', to: "order_products#index", as: "order_products"
