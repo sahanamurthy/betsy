@@ -1,6 +1,7 @@
 <table>
   <tr colspan = "3">
     <th> Order Identification Number: <%= @order[:id]  %></th>
+    <th> Cart </th<
   </tr>
   <tr>
     <td> Name: <%= @order[:name]%> </td>
@@ -18,3 +19,5 @@
   <tr>
     <td> Order Status: <%= @order[:status]%> </td>
   </tr>
+
+  <%= link_to "Complete Order", edit_order_path(@order), class: "button" %>

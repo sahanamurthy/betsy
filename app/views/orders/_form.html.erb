@@ -1,6 +1,7 @@
 <%= form_for @order do |f| %>
 <%= f.label :name %>
 <%= f.text_field :name %>
+<!-- <%= f.hidden_field :status , :value => "Paid" %> -->
 <%= f.label :email %>
 <%= f.text_field :email %>
 <%= f.label :address %>
@@ -15,5 +16,5 @@
 <%= f.text_field :cc_cvv %>
 <%= f.label :zip_code %>
 <%= f.text_field :zip_code %>
-<%= f.submit value: "#{submit_text}"%>
+<!-- <%= f.submit value: "#{submit_text}"%> -->
 <% end %>
