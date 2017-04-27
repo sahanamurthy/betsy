@@ -69,6 +69,11 @@ class ProductsController < ApplicationController
     redirect_to products_path
   end
 
+  def product_by_merchant
+    id = session[:merchant_id]
+    @product_by_merchant = Product.by_merchant(id)
+  end
+
   private
   def product_params
     return params.require(:product).permit(:name, :quantity, :category, :price, :description, :merchant_id)

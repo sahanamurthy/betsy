@@ -43,6 +43,4 @@ class Order < ApplicationRecord
   #order products will have to be destroyed (I think) but it will know
   #by the status being updated? or this is probably in the session logic
 
-
-
 end

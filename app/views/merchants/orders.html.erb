@@ -1,0 +1,32 @@
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Status</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Address</th>
+      <th>cc_name</th>
+      <th>cc_number</th>
+      <th>cc_expiration</th>
+      <th>cc_cvv</th>
+      <th>zip_code</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @orders.each do |order| %>
+      <tr>
+        <td><%= order.id %></td>
+        <td><%= order.status %></td>
+        <td><%= order.name %></td>
+        <td><%= order.email %></td>
+        <td><%= order.address %></td>
+        <td><%= order.cc_name %></td>
+        <td><%= order.cc_number %></td>
+        <td><%= order.cc_expiration %></td>
+        <td><%= order.cc_cvv %></td>
+        <td><%= order.zip_code %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
