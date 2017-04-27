@@ -22,7 +22,7 @@ class OrdersController < ApplicationController
 
   def create
     @order = Order.create(order_params)
-    @order.save 
+    @order.save
     # if @order.save
     #   @order.status = "paid"
     #   redirect_to order_summary_path(@order)
@@ -43,13 +43,14 @@ class OrdersController < ApplicationController
     # @order.save
       if @order.save
         @order.status = "paid"
+        @order.close_session_cart
         redirect_to order_summary_path(@order)
       else
         render :edit, status: :bad_request
         flash[:order_not_saved] = "unable to save order"
       end
-      @order.close_session_cart
-  
+
+
   end
 
   def destroy
@@ -72,7 +73,6 @@ private
 
   def close_session_cart
     session[:order_id] = nil if self.status == "paid"
-
   end
 
 end
