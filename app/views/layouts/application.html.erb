@@ -27,33 +27,33 @@
         <section class="columns large-12 medium-12 small-12">
 
           <nav>
-                <button class="dropbtn"><%=link_to "Home", root_path, :class => "home-button" %></button>
-                <div class="dropdown">
-                  <button class="dropbtn">Merchants</button>
-                  <div class="dropdown-content">
-                    <%= link_to "View all merchants", merchants_path, :class => "link" %>
-                    <%= link_to "Sign Up", login_path, :class => "link" %>
-                    <% if @current_merchant %>
-                    <%= link_to "Account details", merchant_path(@current_merchant), :class => "link" %>
-                    <% end %>
-                  </div>
-                </div>
-                <div class="dropdown">
-                  <button class="dropbtn">Products</button>
-                  <div class="dropdown-content">
-                    <%= link_to "View all products", products_path, :class => "link" %>
-                    <%= link_to "View By category", products_path, :class => "link" %>
-                    <%= link_to "View By merchant", products_path, :class => "link" %>
-                  </div>
-                </div>
+            <button class="dropbtn"><%=link_to "Home", root_path, :class => "home-button" %></button>
+            <div class="dropdown">
+              <button class="dropbtn">Merchants</button>
+              <div class="dropdown-content">
+                <%= link_to "View all merchants", merchants_path, :class => "link" %>
+                <%= link_to "Sign Up", login_path, :class => "link" %>
                 <% if @current_merchant %>
-                <button class="dropbtn"><%=link_to "Log Out", logout_path, method: :post, class: "log", :class => "home-button" %></button>
-                <p class="text-right">Logged in as <%= link_to @current_merchant.username, merchant_path(@current_merchant) %></p>
-                <% else %>
-                <button class="dropbtn"><%=link_to "Log In", "/auth/github", method: :post, class: "log", :class => "home-button" %></button>
-                <p class="text-right">Not logged in</p>
+                  <%= link_to "Account details", merchant_path(@current_merchant), :class => "link" %>
                 <% end %>
-              </nav>
+              </div>
+            </div>
+            <div class="dropdown">
+              <button class="dropbtn">Products</button>
+              <div class="dropdown-content">
+                <%= link_to "View all products", products_path, :class => "link" %>
+                <%= link_to "View By category", products_path, :class => "link" %>
+                <%= link_to "View By merchant", products_path, :class => "link" %>
+              </div>
+            </div>
+            <% if @current_merchant %>
+              <button class="dropbtn"><%=link_to "Log Out", logout_path, method: :post, class: "log", :class => "home-button" %></button>
+              <p class="text-right">Logged in as <%= link_to @current_merchant.username, merchant_path(@current_merchant) %></p>
+            <% else %>
+              <button class="dropbtn"><%=link_to "Log In", "/auth/github", method: :post, class: "log", :class => "home-button" %></button>
+              <p class="text-right">Not logged in</p>
+            <% end %>
+          </nav>
 
           </section>
 
