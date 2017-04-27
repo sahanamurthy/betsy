@@ -35,16 +35,20 @@ body {
 }
 
 body li{list-style: none;}
-.cart {height:50px;display: inline;}
+.cart {height:50px;display: inline;float:right;}
 .text-right, .text-right a {color:#e7a925;font-weight: bolder;display: inline;}
-.woody{width:350px;
+.woody{right:-100px;;
   z-index:-1;
+  position:relative;
+  left:-10px;
 }
 
+nav{background-color: #e12e17;height:45px;width:100%;border-radius: 10px;opacity:.8}
 .but-sidebar{
   background-color: #e7a925 ;
   color:#e12e17;
-  font-weight:bold
+  font-weight:bold;
+
   }
 
  .but-sidebar li {list-style: none}
@@ -61,10 +65,72 @@ body li{list-style: none;}
 
 
 .button {
+<<<<<<< HEAD
   background-color: #f74238;
   border-radius: 9px;
   color:#e7a925;
+=======
+  margin:10px;
+  text-align: center;
+  background-color:#e12e17;
+>>>>>>> dropdown
   font-weight: bold;
   font-size: 18px;
   text-decoration:none;
   }
+<<<<<<< HEAD
+=======
+
+/*.head{width:100%;border-bottom: groove;}*/
+
+
+
+/* Dropdown Button */
+.dropbtn {
+   background-color: #e12e17;
+   color: white;
+   padding: 0px;
+   margin: 0px;
+   font-weight: bold;
+   font-size: 16px;
+   border: none;
+   cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+   position: relative;
+   display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+   display: none;
+   position: absolute;
+   background-color: #e12e17;
+   min-width: 160px;
+   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+   z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+   color: black;
+   /*padding: 12px 16px;*/
+   text-decoration: none;
+   display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+   display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+   background-color: #7289FF;
+}
+>>>>>>> dropdown
