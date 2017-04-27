@@ -68,7 +68,7 @@ describe Order do
 
   describe "subtract_inventory" do
     it "subtracts the quanity of product in order from product quantity" do
-      #TODO finish this test ! 
+      #TODO finish this test !
       # pdt = products(:one)
       # order =
       # Order.subtract_inventory(pdt.id)
@@ -88,6 +88,19 @@ describe Order do
       # order = Order.new
       # order = { order: { name: "Benjamin Franklin", status: "paid", email: "bennyfranklin@gmail.com", address: "990 fremont", cc_name: "Benjamin Franklin", cc_number: 102999203, cc_expiration: "1772/02", cc_cvv: 802, zip_code: 99201 } }
       # order.order_products = { order_products: { id: 1, product_id: 1, quantity: 1, order_id: 1 }, { id: 2, product_id: 1, quantity: 1, order_id: 1 } }
+    end
+  end
+
+  describe "close_session_cart" do
+    it "removes the order_id from the session hash upon completion" do
+      puts session[:order_id]
+      session[:order_id] = orders(:one).id
+      closed_order = orders(:one)
+      closed_order.close_session_cart
+
+      puts session[:order_id]
+
+
     end
   end
 
