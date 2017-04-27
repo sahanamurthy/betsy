@@ -6,11 +6,11 @@ class OrdersController < ApplicationController
 
   def show
     #finding the Order object with the id from url:
-        #Current test url:('localhost/:3000/orders/4')
-        #Order #4  has Order-Products associated with it in the db
+    #Current test url:('localhost/:3000/orders/4')
+    #Order #4  has Order-Products associated with it in the db
     @order = Order.find(params[:id])
     #an array of order-products associated with the Order
-        #order #4
+    #order #4
     @product_names = @order.show_products(@order.id)
     #TODO THIS NEEDS TO BE TESTED
   end
@@ -22,15 +22,15 @@ class OrdersController < ApplicationController
 
   def create
     @order = Order.create(order_params)
-    # if
     @order.save
-      # @order.status = "paid"
-      # redirect_to order_summary_path(@order)
+    # if @order.save
+    #   @order.status = "paid"
+    #   redirect_to order_summary_path(@order)
     # else
     #   render :new, status: :bad_request
     #   flash[:order_not_saved] = "unable to save order"
-    # end
   end
+
 
   def edit
     @order = Order.find_by(id: params[:id])
@@ -40,15 +40,13 @@ class OrdersController < ApplicationController
     @order = Order.find_by(id: params[:id])
     @order.update_attributes(order_params)
     @order.status = "paid"
-    @order.save
+    if @order.save
 
-      if @order.save
-        # @order.status = "paid"
-        redirect_to order_summary_path(@order)
-      else
-        render :edit, status: :bad_request
-        flash[:order_not_saved] = "unable to save order"
-      end
+      redirect_to order_summary_path(@order)
+    else
+      render :edit, status: :bad_request
+      flash[:order_not_saved] = "unable to save order"
+    end
   end
 
   def destroy
@@ -64,7 +62,7 @@ class OrdersController < ApplicationController
 
   end
 
-private
+  private
   def order_params
     return params.require(:order).permit(:name, :status, :email, :address, :cc_name, :cc_number, :cc_expiration, :cc_cvv, :zip_code)
   end

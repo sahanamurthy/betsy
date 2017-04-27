@@ -23,15 +23,15 @@ Rails.application.routes.draw do
   get '/products/product_by_merchant/:id', to:'products#product_by_merchant', as: 'product_by_merchant'
   get '/merchants/:id/orders', to: "merchants#orders", as: "merchant_orders"
 
-
-  get '/orders', to: "orders#index", as: 'orders'
-  get '/orders/new', to: "orders#new", as: 'new_order'
-  post '/orders', to: 'orders#create'
-  get '/orders/:id', to: "orders#show", as: 'order'
-  get '/orders/:id/edit', to: "orders#edit", as: 'edit_order'
-  patch '/orders/:id', to: 'orders#update', as: 'complete_order'
-  delete 'orders/:id', to: 'orders#destroy'
+  resources :orders 
+  # get '/orders', to: "orders#index", as: 'orders'
+  # get '/orders/new', to: "orders#new", as: 'new_order'
+  # post '/orders', to: 'orders#create'
+  # get '/orders/:id', to: "orders#show", as: 'order'
+  # get '/orders/:id/edit', to: "orders#edit", as: 'edit_order'
   get '/orders/:id/order_summary', to: 'orders#order_summary', as: "order_summary"
+  # patch '/orders/:id', to: 'orders#update'
+  # delete 'orders/:id', to: 'orders#destroy'
 
 # merchants/:id/orders
   # get '/merchants', to: "merchants#index", as: 'merchants'
