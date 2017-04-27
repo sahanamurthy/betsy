@@ -8,12 +8,14 @@
   <td rowspan = "3" >
 <p> Products:
   <%@product_names.each_with_index do |product, index|%>
+
   <p><%= index + 1%>.  <%= link_to product.name, products_path(product.id) %> $<%= product.price %>
   <%end%>
   <p>Subtotal: $<%= @order.subtotal %></p>
 </tr>
 <tr>
   <td>Status: <%= @order.status %><td>
+
 </tr>
 <tr>
   <td>Shipping Address: <%= @order.address %></td>
