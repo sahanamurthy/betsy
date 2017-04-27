@@ -24,11 +24,13 @@ class OrderProductsController < ApplicationController
     @order_product = order.order_products.find_by(product_id: params["order_product"]["product_id"])
     # @order_product = OrderProduct.order.find_by(product_id: params[:product_id])
     @order_product.update_attributes(order_item_params)
+    redirect_to order_path(@order_product.order_id)
   end
 
   def destroy
-    @order_product = order.order_products.find_by(product_id: params["order_product"]["product_id"])
+    @order_product = OrderProduct.find_by(id: params[:id])
     @order_product.destroy
+    redirect_to order_path(@order_product.order_id)
   end
 
 
@@ -42,7 +44,7 @@ class OrderProductsController < ApplicationController
     if session[:order_id]
       Order.find_by(id:session[:order_id])
     else
-      order = Order.create
+      order = Order.create(status: "pending")
       session[:order_id] = order.id
       order
     end

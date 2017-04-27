@@ -21,13 +21,15 @@ Rails.application.routes.draw do
   patch '/products/:id', to:'products#update'
   delete '/products/:id', to:'products#destroy'
   get '/products/product_by_merchant/:id', to:'products#product_by_merchant', as: 'product_by_merchant'
+  get '/merchants/:id/orders', to: "merchants#orders", as: "merchant_orders"
+
 
   get '/orders', to: "orders#index", as: 'orders'
   get '/orders/new', to: "orders#new", as: 'new_order'
   post '/orders', to: 'orders#create'
   get '/orders/:id', to: "orders#show", as: 'order'
   get '/orders/:id/edit', to: "orders#edit", as: 'edit_order'
-  patch '/orders/:id', to: 'orders#update'
+  patch '/orders/:id', to: 'orders#update', as: 'complete_order'
   delete 'orders/:id', to: 'orders#destroy'
   get '/orders/:id/order_summary', to: 'orders#order_summary', as: "order_summary"
 
@@ -47,14 +49,13 @@ Rails.application.routes.draw do
   resources :products do
     resources :reviews
   end
-  get '/merchants/:id/orders', to: "merchants#orders", as: "merchant_orders"
-
   # resources :order_products, except: :new
 
   get '/order_products', to: "order_products#index", as: "order_products"
   get '/products/:product_id/order_products/new', to: "order_products#new", as: "new_order_product"
   post '/order_products', to: "order_products#create"
+  delete '/order_products/:id', to: "order_products#destroy", as: "delete_order_product"
   # patch '/order_products/:id', to: "order_products#update", as: "update_order_product"
 
-  resources :order_products, except: [:index, :new, :create]
+  resources :order_products, except: [:index, :new, :create, :destroy]
 end
