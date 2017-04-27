@@ -7,6 +7,10 @@ class ProductsController < ApplicationController
     end
   end
 
+  def new
+    @product = Product.new
+  end
+
 
 
   def create
@@ -73,7 +77,7 @@ class ProductsController < ApplicationController
 
   private
   def product_params
-    return params.require(:product).permit(:name, :quantity, :category, :price, :description, :merchant_id)
+    return params.require(:product).permit(:name, :quantity, :category, :price, :description, :merchant_id, :img_url)
   end
 
   def review_params
