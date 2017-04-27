@@ -1,6 +1,6 @@
 class Order < ApplicationRecord
   has_many :order_products
-  validates :status, presence: true, on: :edit
+  validates :status, presence: true, on: :update
   validates :name, presence: true, on: :update
   validates :email, presence: true, on: :update
   validates :address, presence: true, on: :update

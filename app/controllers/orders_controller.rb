@@ -48,7 +48,6 @@ class OrdersController < ApplicationController
       else
         render :edit, status: :bad_request
         flash[:order_not_saved] = "unable to save order"
-
       end
   end
 
