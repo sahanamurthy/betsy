@@ -12,7 +12,11 @@ class OrderProductsController < ApplicationController
     @order = order
     @order_product = OrderProduct.create!(order_id: @order.id, product_id: params["order_product"]["product_id"], quantity: 1)
     redirect_to products_path
-    flash[:messages] = "Your product was added to the cart!"
+    if redirect_to products_path
+      flash[:messages] = "Your product was added to the cart!"
+    else
+      flash[:messages] = "Unable to add product to cart."
+    end 
   end
 
   def edit
