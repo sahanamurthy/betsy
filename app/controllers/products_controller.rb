@@ -8,12 +8,7 @@ class ProductsController < ApplicationController
   end
 
   def new
-    if @product.can_edit?(@current_merchant) == true
-      @product = Product.new
-    else
-      flash[:message] = "You must be a registered merchant to add a product"
-      redirect_to root_path
-    end
+    @product = Product.new
   end
 
   def create
@@ -41,27 +36,29 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    if @product.can_edit?(@current_merchant) == true
-      @product = Product.find_by(id: params[:id])
-    else
-      flash[:message] = "You are unauthorized to edit this product"
-      redirect_to product_path(@product)
-    end
+    @product = Product.find_by(id: params[:id])
   end
 
 
   def update
-    @merchant = Merchant.find_by(id: 1)
     @product = Product.find_by(id: params[:id])
-    @product.update_attributes(product_params)
-    params[:product][:category_ids][1..-1].each{|id| @product.add_category(id)}
-    @product.save
+
+    if @product.can_edit?(@current_merchant) == true
+      @merchant = Merchant.find_by(id: 1)
+      @product = Product.find_by(id: params[:id])
+      @product.update_attributes(product_params)
+      params[:product][:category_ids][1..-1].each{|id| @product.add_category(id)}
+      @product.save
 
       if @product.save
         redirect_to product_path(params[:id])
       else
         render :edit, status: :bad_request
       end
+    else
+      flash[:message] = "You are unauthorized to edit this product"
+      redirect_to product_path(@product)
+    end
   end
 
   def review
@@ -78,6 +75,8 @@ class ProductsController < ApplicationController
   end
 
   def destroy
+    @product = Product.find_by(id: params[:id])
+
     if @product.can_edit?(@current_merchant) == true
       @product = Product.find_by(id: params[:id])
       @product.destroy
@@ -85,7 +84,7 @@ class ProductsController < ApplicationController
     else
       flash[:message] = "You are unauthorized to delete this product"
       redirect_to product_path(@product)
-    end 
+    end
   end
 
   def product_by_merchant

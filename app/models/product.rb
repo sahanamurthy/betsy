@@ -31,7 +31,7 @@ before_save :defaults
   end
 
   def can_edit?(current_merchant)
-    if self.merchant_id == current_merchant
+    if self.merchant_id == current_merchant.id
       return true
     else
       return false
