@@ -12,4 +12,25 @@ class Merchant < ApplicationRecord
     merchant.oauth_provider = "github"
     return merchant
   end
+
+  def orders_by_merchant
+    @orders = []
+    self.products.each do |product|
+      product.order_products.each do |order_product|
+        @orders.push order_product.order
+      end
+    end
+    return @orders.uniq
+  end
+
+  def total_revenue
+    price = 0
+    self.orders_by_merchant.each do |order|
+      order.order_products.each do |order_product|
+        price += (order_product.product.price)
+      end
+    end
+    return price
+  end
+
 end
