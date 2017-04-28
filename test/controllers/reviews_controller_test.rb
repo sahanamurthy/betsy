@@ -20,16 +20,22 @@ describe ReviewsController do
 
   describe "new" do
     it "runs successfully" do
-      get new_product_review_path(id: 1, product_id: 3)
+      product = Product.first
+      get new_product_review_path(product)
       must_respond_with :success
     end
+
+    # it "returns 404 for a product_id that does not exist" do
+    #   product = Product.last + 1
+    #   get new_product_review_path(product)
+    #   must_respond_with :not_found
+    # end
   end
 
   describe "create" do
-
-    it "creates a new review" do skip
+    it "creates a new review" do
+      product = Product.first
       start_count = Review.count
-
       review_data = {
         review: {
           id: 1,
@@ -37,9 +43,8 @@ describe ReviewsController do
           product_id: 1
         }
       }
-
-      post product_reviews_path(product_id: 1), params: review_data
-      must_redirect_to product_path(id: 1)
+      post product_reviews_path(product), params: review_data
+      must_redirect_to product_path(product)
 
       end_count = Review.count
       end_count.must_equal start_count + 1
