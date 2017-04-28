@@ -1,4 +1,9 @@
-<table>
+<section class="title">
+  <h1> Browse By Merchants </h1>
+</section>
+<% if params[:id]%>
+
+<table class= "merchant product">
   <thead>
     <tr>
       <th>Product</th>
@@ -26,3 +31,14 @@
     <% end %>
   </tbody>
 </table>
+<%end%>
+
+
+<section>
+<% @merchants.each do |merchant|%>
+<aside class="merchant-box">
+  <p class ="title"> <%="#{merchant.name}"%> </p>
+<%= link_to "#{merchant.username}",product_by_merchant_path(:id => merchant.id), class:"merchant_name" %>
+</aside>
+<%end%>
+</section>
