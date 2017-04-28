@@ -4,9 +4,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title><%= content_for?(:title) ? yield(:title) : "Betsy" %></title>
+  <title><%= content_for?(:title) ? yield(:title) : "Andy's Kloset" %></title>
 
   <%= stylesheet_link_tag    "application" %>
+  <link href="https://fonts.googleapis.com/css?family=Erica+One|Londrina+Shadow|Marcellus|Roboto+Condensed" rel="stylesheet">
   <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
@@ -39,25 +40,26 @@
             </div>
 
             <div class="dropdown">
-              <button class="dropbtn">Products</button>
+                <button class="dropbtn">Products</button>
               <div class="dropdown-content">
                 <%= link_to "View all products", products_path, :class => "link" %>
                 <%= link_to "View By category", products_path, :class => "link" %>
                 <%= link_to "View By merchant", products_path, :class => "link" %>
               </div>
             </div>
-            <% if @current_merchant %>
-            <button class="dropbtn"><%=link_to "Log Out", logout_path, method: :post, class: "dropbtn", :class => "dropbtn" %></button>
-            <p class="text-right">Logged in as <%= link_to @current_merchant.username, merchant_path(@current_merchant) %></p>
-            <% else %>
-            <button class="dropbtn"><%=link_to "Log In", "/auth/github", method: :post, class: "dropbtn", :class => "dropbtn" %></button>
-            <p class="text-right">Not logged in</p>
-            <% end %>
+
+              <% if @current_merchant %>
+              <button class="dropbtn"><%=link_to "Log Out", logout_path, method: :post, class: "dropbtn", :class => "dropbtn" %></button>
+              <p class="text-right">Logged in as <%= link_to @current_merchant.username, merchant_path(@current_merchant) %></p>
+              <% else %>
+              <button class="dropbtn"><%=link_to "Log In", "/auth/github", method: :post, class: "dropbtn", :class => "dropbtn" %></button>
+              <p class="text-right">Not logged in</p>
+              <% end %>
+
             <section class= "cart">
               <%= image_tag 'https://raw.githubusercontent.com/sahanamurthy/betsy/header_2/public/treasure_chest.png', class:"cart", id: "cart" %>
-
             </section>
-          </nav>
+        </nav>
   </div>
         </section>
 
@@ -72,7 +74,6 @@
 
 
 </header>
-
 <section class = "row">
 
   <section class="flash">
@@ -89,16 +90,13 @@
     <% end %>
     <% end %>
   </section>
+</section>
 
-
-
+  <section class= "row columns large -8 small -12 ">
+    <section class = "site">
+    <%= yield %>
+  </section>
 
 </section>
-<main class= "site column large-8 offset-2">
-<%= yield %>
-</main>
-<footer class= "site">
-</footer>
-
 </body>
 </html>
