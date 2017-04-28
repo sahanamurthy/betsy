@@ -6,8 +6,8 @@
 <section>
 <% @merchants.each do |merchant|%>
 <aside class="merchant-box">
-  <p class ="title"> <%="#{merchant.name}"%> </p>
-<%= link_to "#{merchant.username}",all_product_path(:id => merchant.id), class:"merchant_name" %>
+   <%="#{merchant.name}"%>
+<h1> <%= link_to "#{merchant.username}",all_product_path(:id => merchant.id), class:"merchant_name" %></h1>
 
 
 </aside>
