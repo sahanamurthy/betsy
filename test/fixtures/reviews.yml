@@ -4,36 +4,34 @@ one:
   rating: 1
   comment: MyString
   name: MyString
-  product_id: 1
+  product: aliens_two
 
 two:
   rating: 1
   comment:
   name:
-  product_id: 1
+  product: one
 
 no_rating:
   rating:
   comment: Blah
   name: Blaher
-  product_id: 1
+  product: one
 
 numerical:
   rating: hfdk
   comment: nlf
   name: llgr
-  product_id: 1
+  product: one
 
 float:
   rating: 2.4
   comment:
   name:
-  product_id: 1
+  product: one
 
 five:
   rating: 5
   comment:
   name:
-  product_id: 1
-
-    
+  product: one

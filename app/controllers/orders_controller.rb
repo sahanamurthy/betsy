@@ -12,7 +12,6 @@ class OrdersController < ApplicationController
     #an array of order-products associated with the Order
     #order #4
     @product_names = @order.show_products(@order.id)
-    #TODO THIS NEEDS TO BE TESTED
   end
 
   def new
@@ -23,12 +22,6 @@ class OrdersController < ApplicationController
   def create
     @order = Order.create(order_params)
     @order.save
-    # if @order.save
-    #   @order.status = "paid"
-    #   redirect_to order_summary_path(@order)
-    # else
-    #   render :new, status: :bad_request
-    #   flash[:order_not_saved] = "unable to save order"
   end
 
 
@@ -41,13 +34,14 @@ class OrdersController < ApplicationController
     @order.update_attributes(order_params)
     @order.status = "paid"
     if @order.save
-
       session[:order_id] = nil
       redirect_to order_summary_path(@order)
-      
+
     else
+      # flash[:message] = "unable to save order"
+      # flash[:status] = :failure
+      flash[:messages] = "Order Error: you must fill out all fields"
       render :edit, status: :bad_request
-      flash[:order_not_saved] = "unable to save order"
     end
   end
 
