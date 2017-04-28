@@ -1,27 +1,30 @@
-<h3>List of Products</h3>
-<section class="product-table">
-  <table>
-    <thead>
-      <tr>
-        <th width=80>Votes</th>
-        <th>Title</th>
-        <th>Created By</th>
-        <th width=100>Published</th>
-        <th width=100>Add To Cart</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @products.each do |product| %>
-        <tr>
-          <td><%= product.name%></td>
-          <td><%= link_to product.name, product_path(product) %></td>
-          <td><%= image_tag product.img_url %></td>
-          <td><%= product.description%></td>
-          <td> <%= link_to "Add to Cart", new_order_product_path(product.id), class: "button" %> </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-  <%= link_to "View View All Products", products_path, class: "button" %>
+<section class = "title">
+<h2>List of Products</h2>
+<section>
+  <%= link_to "View  All Products", products_path, class: "button" %>
+  <% if @current_merchant %>
   <%= link_to "Add a new Product", new_product_path, class: "button" %>
+  <%else%>
+  <%= link_to "View Cart"%>
+  <%end%>
+</section>
+</title>
+<section class="product-table">
+
+
+
+      <% @products.each do |product| %>
+      <aside class="product-box">
+        <h4><%= link_to product.name, product_path(product) %> </h4>
+        <section class = "image-box">
+          <%= image_tag product.img_url %>
+        </section>
+      <p>
+        <h4>  <%= product.description%></h4>
+           <%= link_to "Add to Cart", new_order_product_path(product.id), class: "button" %>
+
+      </aside>
+      <% end %>
+
+
 </section>

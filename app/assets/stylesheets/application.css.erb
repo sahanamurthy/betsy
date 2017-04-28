@@ -16,10 +16,8 @@
 
 /*backgorund image and min sizing*/
 body {
-  /*background: url('main.jpeg');*/
-  background-image: url(<%= asset_path 'ts2.jpg' %>);
-  /*background-size: cover;*/
-  background-attachment: fixed;
+    background-image: url(<%= asset_path 'ts2.jpg' %>);
+    background-attachment: fixed;
    background-repeat: no-repeat;
    background-size: cover;
    -moz-background-size: cover;
@@ -29,17 +27,20 @@ body {
 }
 
 body li{list-style: none;margin:10%;margin-top: 15%;}
-.cart {height:50px;display: inline;float:right;}
-.text-right, .text-right a {color:#e7a925;font-weight: bolder;display: inline;}
-.woody{right:-100px;;
-  z-index:-1;
-  position:relative;
-  left:-10px;
-}
+
+body a{color:white;font-family: 'Roboto Condensed', sans-serif;}
 
 /*Container color for menu bar*/
 nav{background-color: #e12e17;height:45px;width:100%;border-radius: 10px;opacity:.8}
 
+
+.cart {height:50px;display: inline;float:right;}
+.text-right, .text-right a {color:#e7a925;font-weight: bolder;display: inline;}
+.woody{right:-100px;
+  z-index:-1;
+  position:relative;
+  left:-10px;
+}
 
 /*Default button styling*/
 .button {
@@ -69,6 +70,7 @@ nav{background-color: #e12e17;height:45px;width:100%;border-radius: 10px;opacity
 .dropdown {
    position: relative;
    display: inline-block;
+   font-family: 'Erica One', cursive; color:gold;
 }
 
 /* Dropdown Content (Hidden by Default) */
@@ -90,7 +92,7 @@ nav{background-color: #e12e17;height:45px;width:100%;border-radius: 10px;opacity
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #gold}
+.dropdown-content a:hover {background-color:gold}
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
@@ -108,6 +110,8 @@ nav{background-color: #e12e17;height:45px;width:100%;border-radius: 10px;opacity
 /*Transparent shadowbox for main container*/
 .site{background-color: rgba(251, 221, 146, 0.2);}
 
-.site h1, h2, h3{color:white; font-family: 'Erica One', cursive; color:}
+.site h1, h2 {color:white; font-family:'Londrina Shadow', cursive;}
+.site h3, h4, p , a {font-family: 'Roboto Condensed', sans-serif;}
+ .image-box img{max-height: 200px; border-radius: 5px;}
 
- .site table {color:black;}
+ .product-box {width: 30%; display: inline-block;}
