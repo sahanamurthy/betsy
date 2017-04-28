@@ -1,31 +1,22 @@
+<nav class="title">
+ <h1> Order Fulfillment </h1>
+ <h2> Orders completed: <%=@orders.length%></h2>
+</nav>
+
 <table>
   <thead>
     <tr>
-      <th>ID</th>
+      <th>Order Id</th>
       <th>Status</th>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Address</th>
-      <th>cc_name</th>
-      <th>cc_number</th>
-      <th>cc_expiration</th>
-      <th>cc_cvv</th>
-      <th>zip_code</th>
+      <th>Date</th>
     </tr>
   </thead>
   <tbody>
     <% @orders.each do |order| %>
       <tr>
-        <td><%= order.id %></td>
+        <td><%= link_to "#{order.id}", order_path(order), class: "button" %> </td>
         <td><%= order.status %></td>
-        <td><%= order.name %></td>
-        <td><%= order.email %></td>
-        <td><%= order.address %></td>
-        <td><%= order.cc_name %></td>
-        <td><%= order.cc_number %></td>
-        <td><%= order.cc_expiration %></td>
-        <td><%= order.cc_cvv %></td>
-        <td><%= order.zip_code %></td>
+        <td><%= order.updated_at %></td>
       </tr>
     <% end %>
   </tbody>
