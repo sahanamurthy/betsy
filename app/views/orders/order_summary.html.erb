@@ -1,7 +1,10 @@
+<section class="title">
 <h1> Order Confirmation </h1>
+</section>
 <table>
-  <tr colspan = "3">
-    <th>Order id: <%= @order.id %></th>
+  <tr colspan = "1">
+    <th colspan = "2">Order: <%= @order.id %></th>
+
 </tr>
 <tr>
   <td>Name: <%= @order.name %></td>
@@ -14,7 +17,7 @@
   <p>Subtotal: $<%= @order.subtotal %></p>
 </tr>
 <tr>
-  <td>Status: <%= @order.status %><td>
+  <td>Status: <%= @order.status %></td>
 
 </tr>
 <tr>

@@ -18,7 +18,7 @@
 
     <div class="row" >
       <section class="columns large-4 medium-4 small-12">
-        <%=image_tag 'https://raw.githubusercontent.com/sahanamurthy/betsy/master/app/assets/images/woody_logo.png', :class=>"woody"%>
+    <%= image_tag ('https://raw.githubusercontent.com/sahanamurthy/betsy/master/app/assets/images/woody_logo.png') ,:class=>"woody"%>
       </section>
       <section class="columns large-8 medium-12 small-12">
       </section>
@@ -43,8 +43,8 @@
                 <button class="dropbtn">Products</button>
               <div class="dropdown-content">
                 <%= link_to "View all products", products_path, :class => "link" %>
-                <%= link_to "View By category", products_path, :class => "link" %>
-                <%= link_to "View By merchant", products_path, :class => "link" %>
+                <%= link_to "View By category", categories_path, :class => "link" %>
+                <%= link_to "View By merchant", merchants_path, :class => "link" %>
               </div>
             </div>
 
@@ -56,9 +56,14 @@
               <p class="text-right">Not logged in</p>
               <% end %>
 
-            <section class= "cart">
-              <%= image_tag 'https://raw.githubusercontent.com/sahanamurthy/betsy/header_2/public/treasure_chest.png', class:"cart", id: "cart" %>
-            </section>
+                <section id = "cart">
+                  <% if session[:order_id]%>
+                  <%= link_to image_tag('treasure_chest_add.png'),order_path(session[:order_id]) ,:class=>"cart"%>
+                  <%else%>
+                  <%= link_to image_tag('treasure_chest.png'),products_path ,:class=>"cart"%>
+                  <%end%>
+                </section>
+
         </nav>
   </div>
         </section>

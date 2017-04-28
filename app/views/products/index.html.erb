@@ -1,13 +1,16 @@
-<section class = "title">
-<h2>List of Products</h2>
-<section>
-  <%= link_to "View  All Products", products_path, class: "button" %>
+<section class = "title" id="product">
+<h1>Browse all Products</h1>
+
   <% if @current_merchant %>
   <%= link_to "Add a new Product", new_product_path, class: "button" %>
   <%else%>
-  <%= link_to "View Cart"%>
+  <%= link_to "View Cart", class: "button"%>
   <%end%>
+
+
+
 </section>
+
 </title>
 <section class="product-table">
 

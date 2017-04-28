@@ -42,7 +42,9 @@ class OrdersController < ApplicationController
     @order.status = "paid"
     if @order.save
 
+      session[:order_id] = nil
       redirect_to order_summary_path(@order)
+      
     else
       render :edit, status: :bad_request
       flash[:order_not_saved] = "unable to save order"
@@ -66,5 +68,6 @@ class OrdersController < ApplicationController
   def order_params
     return params.require(:order).permit(:name, :status, :email, :address, :cc_name, :cc_number, :cc_expiration, :cc_cvv, :zip_code)
   end
+
 
 end
