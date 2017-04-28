@@ -73,6 +73,7 @@ class MerchantsController < ApplicationController
         @orders.push order_product.order
       end
     end
+    return @orders.uniq
   end
 
   private
