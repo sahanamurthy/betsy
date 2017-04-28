@@ -11,8 +11,6 @@ class ProductsController < ApplicationController
     @product = Product.new
   end
 
-
-
   def create
     @categories = Category.all
     @product = Product.new(product_params)
@@ -43,31 +41,50 @@ class ProductsController < ApplicationController
 
 
   def update
-    @merchant = Merchant.find_by(id: 1)
     @product = Product.find_by(id: params[:id])
-    @product.update_attributes(product_params)
-    params[:product][:category_ids][1..-1].each{|id| @product.add_category(id)}
-    @product.save
+
+    if @product.can_edit?(@current_merchant) == true
+      @merchant = Merchant.find_by(id: 1)
+      @product = Product.find_by(id: params[:id])
+      @product.update_attributes(product_params)
+      params[:product][:category_ids][1..-1].each{|id| @product.add_category(id)}
+      @product.save
 
       if @product.save
         redirect_to product_path(params[:id])
       else
         render :edit, status: :bad_request
       end
+    else
+      flash[:message] = "You are unauthorized to edit this product"
+      redirect_to product_path(@product)
+    end
   end
 
   def review
-  @product = Product.find_by(id: params[:id])
+    if @product.can_edit?(@current_merchant) == false
+      @product = Product.find_by(id: params[:id])
 
-  @product_review = Review.new(review_params)
-  @product_review.product_id = params[:id]
-  @product_review.save!
+      @product_review = Review.new(review_params)
+      @product_review.product_id = params[:id]
+      @product_review.save!
+    else
+      flash[:message] = "You are unauthorized to review this product"
+      redirect_to product_path(@product)
+    end
   end
 
   def destroy
     @product = Product.find_by(id: params[:id])
-    @product.destroy
-    redirect_to products_path
+
+    if @product.can_edit?(@current_merchant) == true
+      @product = Product.find_by(id: params[:id])
+      @product.destroy
+      redirect_to products_path
+    else
+      flash[:message] = "You are unauthorized to delete this product"
+      redirect_to product_path(@product)
+    end
   end
 
   def product_by_merchant

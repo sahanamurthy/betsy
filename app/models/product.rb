@@ -30,5 +30,12 @@ before_save :defaults
       self.categories << Category.find_by(id:id)
   end
 
+  def can_edit?(current_merchant)
+    if self.merchant_id == current_merchant.id
+      return true
+    else
+      return false
+    end
+  end
 
 end
