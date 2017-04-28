@@ -28,7 +28,8 @@ describe OrderProductsController do
 
   describe "create" do
     it "adds a orderproduct to the database" do
-      order_product = {order_product: { product_id: 1, order_id: 1, quantity: 1}}
+      product = Product.first
+      order_product = {order_product: { product_id: product.id, order_id: 1, quantity: 1}}
       post order_products_path, params: order_product
       must_redirect_to products_path
     end
@@ -44,6 +45,7 @@ describe OrderProductsController do
 
   describe "update" do
     it "updates the quantity of an orderproduct" do
+      product = Product.first
       order_product = {order_product: { product_id: 1, quantity: 1}}
       post order_products_path, params: order_product
       order = Order.last
