@@ -1,31 +1,29 @@
+<nav class="title">
+ <h1> Order Fulfillment </h1>
+ <h3> Orders completed: <%=@orders.length%></h3>
+</nav>
+
 <table>
   <thead>
     <tr>
-      <th>ID</th>
+      <th>Order Id</th>
       <th>Status</th>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Address</th>
-      <th>cc_name</th>
-      <th>cc_number</th>
-      <th>cc_expiration</th>
-      <th>cc_cvv</th>
-      <th>zip_code</th>
+      <th>Date</th>
+      <th>Products</th>
+      <th>Revenue</th>
     </tr>
   </thead>
   <tbody>
     <% @orders.each do |order| %>
       <tr>
-        <td><%= order.id %></td>
+        <td><%= link_to "#{order.id}", order_summary_path(order.id), class: "button" %> </td>
         <td><%= order.status %></td>
-        <td><%= order.name %></td>
-        <td><%= order.email %></td>
-        <td><%= order.address %></td>
-        <td><%= order.cc_name %></td>
-        <td><%= order.cc_number %></td>
-        <td><%= order.cc_expiration %></td>
-        <td><%= order.cc_cvv %></td>
-        <td><%= order.zip_code %></td>
+        <td><%= order.updated_at %></td>
+        <td><% order.order_products.each do |order_product| %>
+          <%= link_to order_product.product.name, product_path(order_product.product) %>
+          <%= order_product.quantity %>
+          <%= order_product.quantity * order_product.product.price %>
+        <% end %></td>
       </tr>
     <% end %>
   </tbody>

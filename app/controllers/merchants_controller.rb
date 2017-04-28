@@ -73,8 +73,9 @@ class MerchantsController < ApplicationController
         @orders.push order_product.order
       end
     end
+    return @orders.uniq
   end
-
+  
   private
   def merchant_params
     return params.require(:merchant).permit(:name, :username, :email)
