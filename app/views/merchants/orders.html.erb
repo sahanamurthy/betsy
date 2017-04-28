@@ -1,6 +1,6 @@
 <nav class="title">
  <h1> Order Fulfillment </h1>
- <h2> Orders completed: <%=@orders.length%></h2>
+ <h3> Orders completed: <%=@orders.length%></h3>
 </nav>
 
 <table>
@@ -9,6 +9,8 @@
       <th>Order Id</th>
       <th>Status</th>
       <th>Date</th>
+      <th>Products</th>
+      <th>Revenue</th>
     </tr>
   </thead>
   <tbody>
@@ -17,6 +19,11 @@
         <td><%= link_to "#{order.id}", order_summary_path(order.id), class: "button" %> </td>
         <td><%= order.status %></td>
         <td><%= order.updated_at %></td>
+        <td><% order.order_products.each do |order_product| %>
+          <%= link_to order_product.product.name, product_path(order_product.product) %>
+          <%= order_product.quantity %>
+          <%= order_product.quantity * order_product.product.price %>
+        <% end %></td>
       </tr>
     <% end %>
   </tbody>
