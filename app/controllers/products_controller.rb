@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
   def index
     if params[:category_id]
-    @products =  Product.by_category(params[:category_id])
+    @products =  Product.where(id:params[:category_id])
     else
       @products = Product.all
     end
