@@ -1,8 +1,10 @@
-<% if @merchant == @current_merchant %>
-  <h1>Hiya, <%=@merchant[:name]%></h1>
-<% else %>
-  <h1><%= @merchant[:name]%></h1>
-<% end %>
+<section class="title">
+  <% if @merchant == @current_merchant %>
+    <h1>Hiya, <%=@merchant[:name]%></h1>
+  <% else %>
+    <h1><%= @merchant[:name]%></h1>
+  <% end %>
+</section>
 
 <table>
   <thead>
