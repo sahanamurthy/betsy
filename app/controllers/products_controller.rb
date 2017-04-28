@@ -8,10 +8,13 @@ class ProductsController < ApplicationController
   end
 
   def new
-    @product = Product.new
+    if @product.can_edit?(@current_merchant) == true
+      @product = Product.new
+    else
+      flash[:message] = "You must be a registered merchant to add a product"
+      redirect_to root_path
+    end
   end
-
-
 
   def create
     @categories = Category.all
@@ -38,7 +41,12 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    @product = Product.find_by(id: params[:id])
+    if @product.can_edit?(@current_merchant) == true
+      @product = Product.find_by(id: params[:id])
+    else
+      flash[:message] = "You are unauthorized to edit this product"
+      redirect_to product_path(@product)
+    end
   end
 
 
@@ -57,17 +65,27 @@ class ProductsController < ApplicationController
   end
 
   def review
-  @product = Product.find_by(id: params[:id])
+    if @product.can_edit?(@current_merchant) == false
+      @product = Product.find_by(id: params[:id])
 
-  @product_review = Review.new(review_params)
-  @product_review.product_id = params[:id]
-  @product_review.save!
+      @product_review = Review.new(review_params)
+      @product_review.product_id = params[:id]
+      @product_review.save!
+    else
+      flash[:message] = "You are unauthorized to review this product"
+      redirect_to product_path(@product)
+    end
   end
 
   def destroy
-    @product = Product.find_by(id: params[:id])
-    @product.destroy
-    redirect_to products_path
+    if @product.can_edit?(@current_merchant) == true
+      @product = Product.find_by(id: params[:id])
+      @product.destroy
+      redirect_to products_path
+    else
+      flash[:message] = "You are unauthorized to delete this product"
+      redirect_to product_path(@product)
+    end 
   end
 
   def product_by_merchant
