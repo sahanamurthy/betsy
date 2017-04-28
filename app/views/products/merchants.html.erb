@@ -1,7 +1,7 @@
 <section class="title">
   <h1> Browse By Merchants </h1>
 </section>
-
+<% if session[:id]%>
 
 <table class= "merchant product">
   <thead>
@@ -21,11 +21,7 @@
       <tr>
         <td><%= product.name %></td>
         <td><%= product.id %></td>
-        <%if product.categories.length > 0%>
-        <td><%= product.categories.each{ |category| category.name} %> </td>
-        <%else%>
-        <td></td>
-        <%end%>
+        <td><%= product.categories %></td>
         <td><%= product.price %></td>
         <td><%= product.description%></td>
         <td><%= image_tag product.img_url %></td>
@@ -33,6 +29,16 @@
         <td> <%= link_to "Delete this product", product_path(product), data: {method: :delete, confirm: "Are you sure you want to delete this product?"}, class: "button" %> </td>
       </tr>
     <% end %>
-
   </tbody>
 </table>
+<%end%>
+
+
+<section>
+<% @merchants.each do |merchant|%>
+<aside class="merchant-box">
+  <p class ="title"> <%="#{merchant.name}"%> </p>
+<%= link_to "#{merchant.username}",product_by_merchant_path(:id => merchant.id), class:"merchant_name" %>
+</aside>
+<%end%>
+</section>
