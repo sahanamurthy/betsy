@@ -33,6 +33,8 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find_by(id: params[:id])
     head :not_found if @product.nil?
+
+    @product_reviews = Review.where(product_id: params[:id])
   end
 
   def edit
