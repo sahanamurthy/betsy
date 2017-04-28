@@ -5,9 +5,11 @@
 
 <% @categories.each do |category|%>
 <aside class="category-box">
-  <p class ="title"> <%="#{category.name}"%> </p>
+
+   <em class= "category-title"><%="#{category.name}"%> <br></em>
 <%= link_to image_tag(category.img_url),products_path(:category_id => category.id) %>
 </aside>
+
 <%end%>
 <%if @current_merchant%>
 <%=link_to "Add a new category" ,new_category_path,:class=> "button"%>
