@@ -49,11 +49,5 @@ class Order < ApplicationRecord
     return subtotal_array.inject(:+)
   end
 
-  def total_by_merchant
-    
-  end
-  #destroying the cart - will this be tied to order products?
-  #order products will have to be destroyed (I think) but it will know
-  #by the status being updated? or this is probably in the session logic
 
 end

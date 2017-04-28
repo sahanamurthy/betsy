@@ -15,6 +15,10 @@ describe OrdersController do
       get orders_path(order)
       must_respond_with :success
     end
+
+    it "returns product names" do
+
+    end 
   end
 
   describe "new" do
