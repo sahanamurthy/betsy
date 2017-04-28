@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   # get '/orders/new', to: "orders#new", as: 'new_order'
   # get '/orders', to: "orders#index", as: 'orders'
   # get '/orders/:id', to: "orders#show", as: 'order'
-  root "merchants#index"
+  root "products#index"
   get '/login', to: 'sessions#login', as: 'login'
   post '/login', to: 'sessions#login'
   post '/logout', to: 'sessions#logout', as: 'logout'
@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   get '/products/product_by_merchant/:id', to:'products#product_by_merchant', as: 'product_by_merchant'
   get '/merchants/:id/orders', to: "merchants#orders", as: "merchant_orders"
 
-  resources :orders 
+  resources :orders
   # get '/orders', to: "orders#index", as: 'orders'
   # get '/orders/new', to: "orders#new", as: 'new_order'
   # post '/orders', to: 'orders#create'
