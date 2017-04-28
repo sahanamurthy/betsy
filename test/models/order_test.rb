@@ -60,6 +60,7 @@ describe Order do
 
   describe "show products" do
     it "returns a product name" do
+      order = orders(:one)
       #I think I have to create an order that also has
       #order products tied to it, then see if the order product
       #winds up returning a product name.
@@ -68,7 +69,7 @@ describe Order do
 
   describe "subtract_inventory" do
     it "subtracts the quanity of product in order from product quantity" do
-      #TODO finish this test ! 
+      #TODO finish this test !
       # pdt = products(:one)
       # order =
       # Order.subtract_inventory(pdt.id)
@@ -78,6 +79,16 @@ describe Order do
       b.subtract_inventory(b.id)
     end
   end
+#   a= Product.first
+# b = categories(:one)
+# a.add_category(b.id)
+# filtered_products =  Product.by_category(b.id)
+#
+#
+# filtered_products[0].must_be_instance_of Product
+# filtered_products.length.must_equal Category.find(b.id).products.length
+#
+# end
 
   describe "subtotal" do
     it "sums up the total of the order products" do
