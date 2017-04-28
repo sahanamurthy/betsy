@@ -38,8 +38,10 @@ class OrdersController < ApplicationController
       redirect_to order_summary_path(@order)
 
     else
+      # flash[:message] = "unable to save order"
+      # flash[:status] = :failure
+      flash[:messages] = "Order Error: you must fill out all fields"
       render :edit, status: :bad_request
-      flash[:order_not_saved] = "unable to save order"
     end
   end
 
