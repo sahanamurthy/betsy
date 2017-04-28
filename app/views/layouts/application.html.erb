@@ -32,7 +32,7 @@
               <button class="dropbtn">Merchants</button>
               <div class="dropdown-content">
                 <%= link_to "View all merchants", merchants_path, :class => "link" %>
-                <%= link_to "Sign Up", login_path, :class => "link" %>
+                <%= link_to "Sign Up", "/auth/github", method: :post, :class => "link" %>
                 <% if @current_merchant %>
                 <%= link_to "Account details", merchant_path(@current_merchant), :class => "link" %>
                 <% end %>
