@@ -4,56 +4,68 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title><%= content_for?(:title) ? yield(:title) : "Betsy" %></title>
+  <title><%= content_for?(:title) ? yield(:title) : "Andy's Kloset" %></title>
 
   <%= stylesheet_link_tag    "application" %>
+  <link href="https://fonts.googleapis.com/css?family=Erica+One|Londrina+Shadow|Marcellus|Roboto+Condensed" rel="stylesheet">
   <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 
 <body>
+
   <header class = "head">
 
     <div class="row" >
-      <section class="columns large-12 medium-12 small-12">
-
-      <section class="columns large-4 medium-4 small-12 float-left">
-        <%=image_tag 'https://raw.githubusercontent.com/sahanamurthy/betsy/master/app/assets/images/woody_logo.png'%>
-
-      </section>
       <section class="columns large-4 medium-4 small-12">
+        <%=image_tag 'https://raw.githubusercontent.com/sahanamurthy/betsy/master/app/assets/images/woody_logo.png', :class=>"woody"%>
+      </section>
+      <section class="columns large-8 medium-12 small-12">
+      </section>
+    </div>
+    <div class = "row">
+      <section class="columns large-12 medium-12 small-12">
+        <nav>
+          <button class="dropbtn">
+            <%=link_to "Home", root_path, :class => "dropbtn" %></button>
+            <div class="dropdown">
+              <button class="dropbtn">Merchants</button>
+              <div class="dropdown-content">
+                <%= link_to "View all merchants", merchants_path, :class => "link" %>
+                <%= link_to "Sign Up", login_path, :class => "link" %>
+                <% if @current_merchant %>
+                <%= link_to "Account details", merchant_path(@current_merchant), :class => "link" %>
+                <% end %>
+              </div>
+            </div>
 
-        <%= image_tag 'https://raw.githubusercontent.com/sahanamurthy/betsy/header_2/public/treasure_chest.png', class:"cart", id: "cart" %>
-        <section class="columns large-12 medium-12 small-12">
-          <ul  class = "dropdown menu" data-dropdown-menu>
-            <li>
-              <%= link_to 'Sign Up',login_path ,class:"but-sidebar"%>
-            </li>
-            <li>
-              <%= link_to 'More Links',new_product_path ,class:"but-sidebar"%>
-              <ul>
-                <li> <%= link_to 'More Links',products_path ,class:"but-sidebar"%></li>
-              </ul>
-            </li>
+            <div class="dropdown">
+                <button class="dropbtn">Products</button>
+              <div class="dropdown-content">
+                <%= link_to "View all products", products_path, :class => "link" %>
+                <%= link_to "View By category", products_path, :class => "link" %>
+                <%= link_to "View By merchant", products_path, :class => "link" %>
+              </div>
+            </div>
 
-            <li>
               <% if @current_merchant %>
-              <%= link_to "Log Out", logout_path, method: :post, class: "log" %>
+              <button class="dropbtn"><%=link_to "Log Out", logout_path, method: :post, class: "dropbtn", :class => "dropbtn" %></button>
               <p class="text-right">Logged in as <%= link_to @current_merchant.username, merchant_path(@current_merchant) %></p>
               <% else %>
-              <%= link_to "Log In", "/auth/github", class: "log " %>
+              <button class="dropbtn"><%=link_to "Log In", "/auth/github", method: :post, class: "dropbtn", :class => "dropbtn" %></button>
               <p class="text-right">Not logged in</p>
-
               <% end %>
-            </li>
-          </ul>
 
-
-          </section>
-
-</section>
+            <section class= "cart">
+              <%= image_tag 'https://raw.githubusercontent.com/sahanamurthy/betsy/header_2/public/treasure_chest.png', class:"cart", id: "cart" %>
+            </section>
+        </nav>
+  </div>
+        </section>
 
       </section>
+
+    </section>
 
 
 
@@ -62,7 +74,6 @@
 
 
 </header>
-
 <section class = "row">
 
   <section class="flash">
@@ -79,12 +90,13 @@
     <% end %>
     <% end %>
   </section>
+</section>
 
-
-
+  <section class= "row columns large -8 small -12 ">
+    <section class = "site">
+    <%= yield %>
+  </section>
 
 </section>
-<%= yield %>
-
 </body>
 </html>
