@@ -89,8 +89,13 @@ class ProductsController < ApplicationController
 
   def product_by_merchant
     id = session[:merchant_id]
+
     @product_by_merchant = Product.by_merchant(id)
+    @merchants = Merchant.all
   end
+
+
+
 
   private
   def product_params
