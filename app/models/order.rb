@@ -17,10 +17,6 @@ class Order < ApplicationRecord
     @product_names = @order_products.map{|item| Product.find_by(id: item.product_id)}
   end
 
-  def close_session_cart
-    # if session.id == order_id &&
-  end
-
   def subtract_inventory(id)
     #after update
     product_quantity = {}
