@@ -12,9 +12,9 @@
 <p> Products:
   <%@product_names.each_with_index do |product, index|%>
 
-  <p><%= index + 1%>.  <%= link_to "#{product.name}", products_path(product.id) %> $<%= product.price %>
+  <p><%= index + 1%>.  <%= link_to "#{product.name}", product_path(product.id), :class=> "links" %> <%= number_to_currency(product.price) %>
   <%end%>
-  <p>Subtotal: $<%= @order.subtotal %></p>
+  <p>Subtotal: <%= number_to_currency(@order.subtotal) %></p>
 </tr>
 <tr>
   <td>Status: <%= @order.status %></td>
