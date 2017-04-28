@@ -1,10 +1,10 @@
 <section>
   <%= form_for @merchant do |f| %>
-    <%= f.label :name %>
+    <%= f.label :name, :class=>'form-for-text' %>
     <%= f.text_field :name %>
-    <%= f.label :username %>
+    <%= f.label :username, :class=>'form-for-text' %>
     <%= f.text_field :username %>
-    <%= f.label :email %>
+    <%= f.label :email, :class=>'form-for-text' %>
     <%= f.text_field :email %>
     <%= f.submit value: "#{submit_text} merchant" , class: "button" %>
   <% end %>
