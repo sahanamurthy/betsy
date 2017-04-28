@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   get "/auth/:provider/callback", to: "sessions#auth_callback", as: 'auth_callback'
 
 
-  get '/products/product_by_merchant', to:'products#product_by_merchant', as: 'products_by_merchant'
+
   get '/products', to: 'products#index'
   get '/products/new', to:'products#new', as: "new_product"
   post '/products', to: 'products#create'
@@ -23,7 +23,8 @@ Rails.application.routes.draw do
   delete '/products/:id', to:'products#destroy'
   get '/products/product_by_merchant/:id', to:'products#product_by_merchant', as: 'product_by_merchant'
 
-
+get 'merchants/merchants', to:"merchants#merchants", as:"all_merchant"
+get 'merchants/products', to:"merchants#products", as:"all_product"
   get '/merchants/:id/orders', to: "merchants#orders", as: "merchant_orders"
 
   resources :orders
