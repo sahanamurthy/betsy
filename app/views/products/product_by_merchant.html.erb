@@ -1,5 +1,5 @@
 <section class="title">
-  <h1> Browse By Merchants </h1>
+  <h1> Your Products </h1>
 </section>
 
 
@@ -8,7 +8,7 @@
     <tr>
       <th>Product</th>
       <th>ID</th>
-      <th>Category</th>
+      <th>Categories</th>
       <th>Price</th>
       <th>Description</th>
       <th>Image</th>
@@ -22,9 +22,9 @@
         <td><%= product.name %></td>
         <td><%= product.id %></td>
         <%if product.categories.length > 0%>
-        <td><%= product.categories.each{ |category| category.name} %> </td>
+          <td><%= product.categories.each{ |category| category.name} %> </td>
         <%else%>
-        <td></td>
+          <td></td>
         <%end%>
         <td><%= product.price %></td>
         <td><%= product.description%></td>
