@@ -6,6 +6,8 @@ class CategoriesController < ApplicationController
 
   def new
     @category = Category.new
+    puts ">>> DPR:"
+    puts @category.attributes
   end
 
   def create
