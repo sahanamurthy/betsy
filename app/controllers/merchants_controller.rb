@@ -70,6 +70,15 @@ class MerchantsController < ApplicationController
     @orders = merchant.orders_by_merchant
   end
 
+  def merchants
+    @merchants = Merchant.all
+  end
+
+  def products
+    @merchant = Merchant.find_by(id:params[:id])
+    @products = @merchant.products
+  end
+
   private
   def merchant_params
     return params.require(:merchant).permit(:name, :username, :email)

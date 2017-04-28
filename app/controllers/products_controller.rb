@@ -96,9 +96,6 @@ class ProductsController < ApplicationController
     @merchants = Merchant.all
   end
 
-  def merchants
-    @merchants = Merchant.all
-  end
 
 
 
