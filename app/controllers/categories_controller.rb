@@ -9,6 +9,7 @@ class CategoriesController < ApplicationController
   end
 
   def create
+
     @category = Category.create(category_params)
     if @category.save
       redirect_to categories_path
@@ -28,7 +29,7 @@ class CategoriesController < ApplicationController
   end
   private
   def category_params
-    return params.require(:category).permit(:name)
+    return params.require(:category).permit(:name, :img_url)
   end
 
 
