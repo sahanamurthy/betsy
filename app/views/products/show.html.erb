@@ -12,6 +12,7 @@
       <th>Description</th>
       <th>Categories</th>
       <th>Price</th>
+      <th>Quantity</th>
     </tr>
   </thead>
   <tbody>
@@ -26,6 +27,7 @@
         <td></td>
       <%end%>
       <td><%= number_to_currency(@product.price) %></td>
+      <td><%= @product.quantity %>
     </tr>
   </tbody>
 </table>
