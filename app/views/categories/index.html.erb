@@ -7,7 +7,7 @@
 <aside class="category-box">
 
    <em class= "category-title"><%="#{category.name}"%> <br></em>
-<%= link_to image_tag(category.img_url),products_path(:category_id => category.id) %>
+<%= link_to image_tag(category.img_url), category_product_category_path(:category_id => category.id) %>
 </aside>
 
 <%end%>

@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
   def index
     if params[:category_id]
-    @products =  Product.where(id:params[:category_id])
+      @products =  Product.by_category(params[:category_id])
     else
       @products = Product.all
     end
@@ -18,7 +18,7 @@ class ProductsController < ApplicationController
     #This code is calling going into the params hash, then the product hash, then the category_ids.
     #It is then iterating through all the category ids, except the first
     #And for each category id, it is passing the given ID as an attribute for the product
-    params[:product][:category_ids][1...-1].each{|id| @product.add_category(id)}
+    params[:product][:category_ids][1..-1].each{|id| @product.add_category(id)}
     #temporarily hard-coded worried the underlying form code doesn't work though
     @product.save
     if @product.save
