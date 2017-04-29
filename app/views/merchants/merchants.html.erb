@@ -6,7 +6,6 @@
 <section>
 <% @merchants.each do |merchant|%>
 <aside class="merchant-box">
-   <%="#{merchant.name}"%>
 <h1> <%= link_to "#{merchant.username}",all_product_path(:id => merchant.id), class:"merchant_name" %></h1>
 
 
