@@ -34,7 +34,9 @@
 <%= link_to "View All Products", products_path, class: "button" %>
 <%= link_to "Add a New Product", new_product_path, class: "button" %>
 <%= link_to "Add to Cart", new_order_product_path(@product.id), class: "button" %>
-<%= link_to "Add Review", new_product_review_path(@product.id), class: "button" %>
+<% if @current_merchant != @product.merchant %>
+  <%= link_to "Add Review", new_product_review_path(@product.id), class: "button" %>
+<% end %>
 
 </section>
 
